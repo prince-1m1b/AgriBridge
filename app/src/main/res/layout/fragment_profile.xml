@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_green"
+    android:fillViewport="true">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/customToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/ic_bg_bottom_rounded_light_green"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="20dp"
+            android:text="Prince Malani"
+            android:textColor="@color/colorPrimary"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="20dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customToolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <!-- ── ACCOUNT ──────────────────────────────────── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="7dp"
+                android:letterSpacing="0.10"
+                android:text="@string/account_header"
+                android:textColor="@color/green_primary"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/green_card_stroke"
+                app:strokeWidth="0.5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Language -->
+                    <LinearLayout
+                        android:id="@+id/clLanguage"
+                        style="@style/ProfileRow"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <LinearLayout
+                            style="@style/IconBox"
+                            android:backgroundTint="@color/icon_green_2">
+
+                            <ImageView
+                                android:id="@+id/ivLanguage"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_languages" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/RowTextBlock">
+
+                            <TextView
+                                android:id="@+id/tvLanguage"
+                                style="@style/RowTitle"
+                                android:text="@string/language" />
+
+                            <TextView
+                                style="@style/RowSub"
+                                android:text="@string/english_default"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/ivNextLanguage"
+                            style="@style/RowArrow"
+                            android:src="@drawable/ic_next" />
+                    </LinearLayout>
+
+                    <!-- Phone Number -->
+                    <LinearLayout
+                        android:id="@+id/clPhone"
+                        style="@style/ProfileRow"
+                        android:clickable="false"
+                        android:focusable="false">
+
+                        <LinearLayout
+                            style="@style/IconBox"
+                            android:backgroundTint="@color/green_icon_1">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_phone_number"
+                                app:tint="@color/white" />
+
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/RowTextBlock">
+
+                            <TextView
+                                style="@style/RowTitle"
+                                android:text="@string/phone_number" />
+
+                            <TextView
+                                android:id="@+id/tvPhoneValue"
+                                style="@style/RowSub"
+                                android:text="N/A" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/RowDivider" />
+
+                    <!-- Email Address -->
+                    <LinearLayout
+                        android:id="@+id/clEmail"
+                        style="@style/ProfileRow"
+                        android:clickable="false"
+                        android:focusable="false">
+
+                        <LinearLayout
+                            style="@style/IconBox"
+                            android:backgroundTint="@color/icon_green_4">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_email" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/RowTextBlock">
+
+                            <TextView
+                                style="@style/RowTitle"
+                                android:text="@string/email_address" />
+
+                            <TextView
+                                android:id="@+id/tvEmailValue"
+                                style="@style/RowSub"
+                                android:text="N/A" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/RowDivider" />
+
+                    <!-- Location -->
+                    <LinearLayout
+                        android:id="@+id/clLocation"
+                        style="@style/ProfileRow"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <LinearLayout
+                            style="@style/IconBox"
+                            android:backgroundTint="@color/icon_green_3">
+
+                            <ImageView
+                                android:id="@+id/ivLocation"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_map" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/RowTextBlock">
+
+                            <TextView
+                                android:id="@+id/tvLocation"
+                                style="@style/RowTitle"
+                                android:text="@string/location" />
+
+                            <TextView
+                                android:id="@+id/tvLocationValue"
+                                style="@style/RowSub"
+                                android:text="@string/mock_location"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/ivNextLocation"
+                            style="@style/RowArrow"
+                            android:src="@drawable/ic_next" />
+                    </LinearLayout>
+
+                    <View style="@style/RowDivider" />
+
+                    <!-- Change Password -->
+                    <LinearLayout
+                        android:id="@+id/clChangePassword"
+                        style="@style/ProfileRow"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <LinearLayout
+                            style="@style/IconBox"
+                            android:backgroundTint="@color/green_version_text">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_change_password" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/RowTextBlock">
+
+                            <TextView
+                                style="@style/RowTitle"
+                                android:text="@string/change_password" />
+
+                            <TextView
+                                style="@style/RowSub"
+                                android:text="@string/update_account_password" />
+                        </LinearLayout>
+
+                        <ImageView
+                            style="@style/RowArrow"
+                            android:src="@drawable/ic_next" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ── PREFERENCES ──────────────────────────────── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="7dp"
+                android:letterSpacing="0.10"
+                android:text="@string/preferences_header"
+                android:textColor="@color/green_primary"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/green_card_stroke"
+                app:strokeWidth="0.5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <!-- Clear Chat -->
+                    <LinearLayout
+                        android:id="@+id/clClearChat"
+                        style="@style/ProfileRow"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <LinearLayout
+                            style="@style/IconBox"
+                            android:backgroundTint="@color/icon_green_2">
+
+                            <ImageView
+                                android:id="@+id/ivClearChat"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_clear_all_chat" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/RowTextBlock">
+
+                            <TextView
+                                android:id="@+id/tvClearChat"
+                                style="@style/RowTitle"
+                                android:text="@string/clear_chat"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                style="@style/RowSub"
+                                android:text="@string/clear_chat_sub"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/ivNextClearChat"
+                            style="@style/RowArrow"
+                            android:src="@drawable/ic_next" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ── SUPPORT & LEGAL ──────────────────────────── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="7dp"
+                android:letterSpacing="0.10"
+                android:text="@string/support_legal_header"
+                android:textColor="@color/green_primary"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/green_card_stroke"
+                app:strokeWidth="0.5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Help & Support -->
+                    <LinearLayout
+                        android:id="@+id/clHelp"
+                        style="@style/ProfileRow"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <LinearLayout
+                            style="@style/IconBox"
+                            android:backgroundTint="@color/icon_green_1">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_support" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/RowTextBlock">
+
+                            <TextView
+                                style="@style/RowTitle"
+                                android:text="@string/help_and_support"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                style="@style/RowSub"
+                                android:text="@string/help_support_sub"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+                        <ImageView
+                            style="@style/RowArrow"
+                            android:src="@drawable/ic_next" />
+                    </LinearLayout>
+
+                    <View style="@style/RowDivider" />
+
+                    <!-- Terms & Conditions -->
+                    <LinearLayout
+                        android:id="@+id/clTerms"
+                        style="@style/ProfileRow"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <LinearLayout
+                            style="@style/IconBox"
+                            android:backgroundTint="@color/icon_green_3">
+
+                            <ImageView
+                                android:id="@+id/ivTerms"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_terms_and_conditions" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/RowTextBlock">
+
+                            <TextView
+                                android:id="@+id/tvTerms"
+                                style="@style/RowTitle"
+                                android:text="@string/terms_conditions"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                style="@style/RowSub"
+                                android:text="@string/terms_conditions_sub"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/ivNextTerms"
+                            style="@style/RowArrow"
+                            android:src="@drawable/ic_next" />
+                    </LinearLayout>
+
+                    <View style="@style/RowDivider" />
+
+                    <!-- Privacy Policy -->
+                    <LinearLayout
+                        android:id="@+id/clPrivacy"
+                        style="@style/ProfileRow"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <LinearLayout
+                            style="@style/IconBox"
+                            android:backgroundTint="@color/icon_green_4">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_policy" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/RowTextBlock">
+
+                            <TextView
+                                style="@style/RowTitle"
+                                android:text="@string/privacy_policy"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                style="@style/RowSub"
+                                android:text="@string/privacy_policy_sub"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+                        <ImageView
+                            style="@style/RowArrow"
+                            android:src="@drawable/ic_next" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ── LOGOUT button ───────────────────────────── -->
+            <LinearLayout
+                android:id="@+id/clLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_logout_btn"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <ImageView
+                    android:id="@+id/ivLogout"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_logout" />
+
+                <TextView
+                    android:id="@+id/tvLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/log_out"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+
+            <!-- App version -->
+            <TextView
+                android:id="@+id/tvAppVersion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="@string/app_version"
+                android:textColor="@color/green_version_text"
+                android:textSize="11sp"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/progressBarContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:focusedByDefault="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
+
+        <!--LOADER-->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

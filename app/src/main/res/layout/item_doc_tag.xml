@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/item_doc_tag.xml
+     Inflated programmatically inside layoutDocTags in SchemeAdapter.
+     Renders each document name as a small icon-less pill tag.        -->
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_pill_neutral"
+    android:drawablePadding="4dp"
+    android:gravity="center_vertical"
+    android:paddingStart="9dp"
+    android:paddingEnd="9dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"
+    android:textColor="@color/text_secondary"
+    android:textSize="11sp" />

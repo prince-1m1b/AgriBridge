@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Override white to dark grey for layouts referencing it as background -->
+    <color name="white">#121212</color>
+    <!-- Override black to light grey for layouts referencing it as text color -->
+    <color name="black">#EEEEEE</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- Surfaces -->
+    <color name="card_background">#1E1E1E</color>
+    <color name="card_stroke">#2D2D2D</color>
+    <color name="divider_color">#2A2A2A</color>
+    <color name="info_box_bg">#181818</color>
+    <color name="pill_background">#252525</color>
+    <color name="pill_stroke">#333333</color>
+
+    <!-- Text -->
+    <color name="text_primary">#E5E7EB</color>
+    <color name="text_secondary">#9CA3AF</color>
+
+    <!-- Purple — Subsidy primary palette -->
+    <color name="subsidy_purple">#B388FF</color>
+    <color name="subsidy_purple_dark">#D1C4E9</color>
+    <color name="subsidy_purple_mid">#E040FB</color>
+    <color name="subsidy_ripple">#33B388FF</color>
+    <color name="subsidy_chip_bg">#311B92</color>
+    <color name="subsidy_chip_text">#D1C4E9</color>
+    <color name="subsidy_box_bg">#2A1B4E</color>
+    <color name="subsidy_box_stroke">#7E57C2</color>
+    <color name="subsidy_breakdown_pill">#33B388FF</color>
+
+    <!-- Deadline urgency pill -->
+    <color name="deadline_bg">#880E4F</color>
+    <color name="deadline_text">#F8BBD0</color>
+
+    <!-- Blue (primary for Crop Loan / Short-term / e-Market / Equipment) -->
+    <color name="blue_primary">#90CAF9</color>
+    <color name="blue_ripple">#3390CAF9</color>
+    <color name="blue_chip_bg">#0D47A1</color>
+    <color name="blue_chip_text">#E3F2FD</color>
+    <color name="blue_box_bg">#1A237E</color>
+    <color name="blue_box_stroke">#5C6BC0</color>
+    <color name="blue_value">#E3F2FD</color>
+    <color name="blue_label">#90CAF9</color>
+
+    <!-- Market orange (Retail & Wholesale) -->
+    <color name="market_orange">#FFCC80</color>
+    <color name="market_ripple">#33FFCC80</color>
+    <color name="market_chip_bg">#E65100</color>
+    <color name="market_chip_text">#FFCC80</color>
+
+    <!-- Teal (Term Loans / APMC / Mandi / Organic) -->
+    <color name="teal_primary">#80CBC4</color>
+    <color name="teal_chip_bg">#004D40</color>
+    <color name="teal_chip_text">#E0F2F1</color>
+
+    <!-- Green palette (Subsidies / Available / Buy / Vegetables / Seeds) -->
+    <color name="green_primary">#81C784</color>
+    <color name="green_accent">#A5D6A7</color>
+    <color name="green_dark">#C8E6C9</color>
+    <color name="green_chip_bg">#1B5E20</color>
+    <color name="green_chip_text">#C8E6C9</color>
+    <color name="green_ripple">#3381C784</color>
+    <color name="green_image_placeholder">#2E7D32</color>
+    <color name="veg_tag_text">#C8E6C9</color>
+
+    <!-- Amber (Interest rate metric / Other categories) -->
+    <color name="amber_primary">#FFB74D</color>
+    <color name="amber_chip_bg">#E65100</color>
+    <color name="amber_chip_text">#FFE0B2</color>
+    <color name="amber_box_bg">#3E2723</color>
+    <color name="amber_box_stroke">#A1887F</color>
+    <color name="amber_value">#FFE0B2</color>
+    <color name="amber_label">#FFB74D</color>
+
+    <!-- Original project colors -->
+    <color name="blue">#2196F3</color>
+    <color name="light_gray">#424242</color>
+    <color name="dark_gray">#B0BEC5</color>
+    <color name="blue_transparent">#402196F3</color>
+    <color name="red">#EF5350</color>
+    <color name="green">#81C784</color>
+    <color name="light_light_gray">#1E1E1E</color>
+    <color name="colorPrimary">#81C784</color>
+    <color name="light_green">#4CAF50</color>
+    <color name="lavender">#7B1FA2</color>
+    <color name="sky_blue">#0288D1</color>
+    <color name="dark_purple">#B388FF</color>
+    <color name="light_light_green">#2E7D32</color>
+    <color name="row_arrow_color">#9CA3AF</color>
+    <color name="gray_border">#303030</color>
+
+    <!-- Page & card surfaces -->
+    <color name="profile_bg">#121212</color>
+    <color name="green_card_stroke">#2E7D32</color>
+    <color name="green_divider">#263238</color>
+
+    <!-- Avatar -->
+    <color name="avatar_ring_bg">#1AFFFFFF</color>
+    <color name="avatar_inner_bg">#1B5E20</color>
+    <color name="avatar_initials_color">#E8F5E9</color>
+
+    <!-- Section labels + green primary -->
+    <color name="green_version_text">#4CAF50</color>
+
+    <!-- Icon box tints (dark mode shades) -->
+    <color name="icon_green_1">#1B5E20</color>
+    <color name="icon_green_2">#2E7D32</color>
+    <color name="icon_green_3">#33691E</color>
+    <color name="icon_green_4">#558B2F</color>
+
+    <!-- Icon foreground tints -->
+    <color name="green_icon_1">#E8F5E9</color>
+    <color name="green_icon_2">#C8E6C9</color>
+    <color name="green_icon_3">#DCEDC8</color>
+    <color name="green_icon_4">#F9FBE7</color>
+
+    <!-- Logout -->
+    <color name="logout_red">#E53935</color>
+    <color name="logout_bg">#2C1A1A</color>
+    <color name="logout_border">#5C2525</color>
+    <color name="bg_green">#121212</color>
+
+    <!-- Bottom nav inactive state -->
+    <color name="nav_icon_unselected">#78909C</color>
+    <color name="nav_text_unselected">#78909C</color>
+
+    <!-- Search field -->
+    <color name="search_field_bg">#1E1E1E</color>
+    <color name="search_field_stroke">#2D2D2D</color>
+
+    <!-- Chat Bubbles -->
+    <color name="chat_user_bubble">#81C784</color>
+    <color name="chat_user_text">#121212</color>
+    <color name="chat_user_time">#333333</color>
+    <color name="chat_bot_bubble">#2C2C2C</color>
+
+    <!-- Overlay Backgrounds -->
+    <color name="progress_overlay_bg">#80000000</color>
+    <color name="splash_overlay_bg">#55000000</color>
+</resources>

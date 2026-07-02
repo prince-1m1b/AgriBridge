@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- Surfaces -->
+    <color name="card_background">#FFFFFF</color>
+    <color name="card_stroke">#E5E7EB</color>
+    <color name="divider_color">#EBEBEB</color>
+    <color name="info_box_bg">#F8F9FA</color>
+    <color name="pill_background">#F3F4F6</color>
+    <color name="pill_stroke">#E5E7EB</color>
+
+    <!-- Text -->
+    <color name="text_primary">#1C1C1E</color>
+    <color name="text_secondary">#6B7280</color>
+
+    <!-- Purple — Subsidy primary palette -->
+    <color name="subsidy_purple">#7B1FA2</color>
+    <color name="subsidy_purple_dark">#4A148C</color>
+    <color name="subsidy_purple_mid">#6A1B9A</color>
+    <color name="subsidy_ripple">#1A7B1FA2</color>
+    <color name="subsidy_chip_bg">#F3E5F5</color>
+    <color name="subsidy_chip_text">#4A148C</color>
+    <color name="subsidy_box_bg">#F3E5F5</color>
+    <color name="subsidy_box_stroke">#CE93D8</color>
+    <color name="subsidy_breakdown_pill">#1A7B1FA2</color>
+
+    <!-- Deadline urgency pill -->
+    <color name="deadline_bg">#FCE4EC</color>
+    <color name="deadline_text">#880E4F</color>
+
+    <!-- Blue (primary for Crop Loan / Short-term / e-Market / Equipment) -->
+    <color name="blue_primary">#1565C0</color>
+    <color name="blue_ripple">#1A1565C0</color>
+    <color name="blue_chip_bg">#E3F2FD</color>
+    <color name="blue_chip_text">#0C447C</color>
+    <color name="blue_box_bg">#E6F1FB</color>
+    <color name="blue_box_stroke">#B5D4F4</color>
+    <color name="blue_value">#0C447C</color>
+    <color name="blue_label">#185FA5</color>
+
+    <!-- Market orange (Retail & Wholesale) -->
+    <color name="market_orange">#E65100</color>
+    <color name="market_ripple">#1AE65100</color>
+    <color name="market_chip_bg">#FBE9E7</color>
+    <color name="market_chip_text">#BF360C</color>
+
+    <!-- Teal (Term Loans / APMC / Mandi / Organic) -->
+    <color name="teal_primary">#00695C</color>
+    <color name="teal_chip_bg">#E0F2F1</color>
+    <color name="teal_chip_text">#004D40</color>
+
+    <!-- Green palette (Subsidies / Available / Buy / Vegetables / Seeds) -->
+    <color name="green_primary">#2E7D32</color>
+    <color name="green_accent">#4CAF50</color>
+    <color name="green_dark">#1B5E20</color>
+    <color name="green_chip_bg">#E8F5E9</color>
+    <color name="green_chip_text">#1B5E20</color>
+    <color name="green_ripple">#1A2E7D32</color>
+    <color name="green_image_placeholder">#C8E6C9</color>
+    <color name="veg_tag_text">#33691E</color>
+
+    <!-- Amber (Interest rate metric / Other categories) -->
+    <color name="amber_primary">#E65100</color>
+    <color name="amber_chip_bg">#FBE9E7</color>
+    <color name="amber_chip_text">#BF360C</color>
+    <color name="amber_box_bg">#FFF8E1</color>
+    <color name="amber_box_stroke">#FAC775</color>
+    <color name="amber_value">#633806</color>
+    <color name="amber_label">#854F0B</color>
+
+    <!-- Type chip colors -->
+    <color name="chip_income">#2E7D32</color>
+    <color name="chip_subsidy">#1565C0</color>
+    <color name="chip_insurance">#6A1B9A</color>
+    <color name="chip_credit">#E65100</color>
+    <color name="chip_infra">#37474F</color>
+
+    <!-- Original project colors (kept for compatibility) -->
+    <color name="blue">#0000FF</color>
+    <color name="light_gray">#D3D3D3</color>
+    <color name="dark_gray">#A9A9A9</color>
+    <color name="blue_transparent">#800000FF</color>
+    <color name="red">#D32F2F</color>
+    <color name="green">#4CAF50</color>
+    <color name="light_light_gray">#F5F5F6</color>
+    <color name="colorPrimary">#2E7D32</color>
+    <color name="light_green">#81C784</color>
+    <color name="lavender">#E1BEE7</color>
+    <color name="sky_blue">#81D4FA</color>
+    <color name="dark_purple">#4A148C</color>
+    <color name="light_light_green">#DCEDC8</color>
+    <color name="row_arrow_color">#9CA3AF</color>
+    <color name="gray_border">#E0E0E0</color>
+    <!-- ── Page & card surfaces ── -->
+    <color name="profile_bg">#F1F8E9</color>
+    <color name="green_card_stroke">#C8E6C9</color>
+    <color name="green_divider">#E8F5E9</color>
+
+    <!-- ── Avatar ── -->
+    <color name="avatar_ring_bg">#33FFFFFF</color>
+    <color name="avatar_inner_bg">#E8F5E9</color>
+    <color name="avatar_initials_color">#1B5E20</color>
+
+    <!-- ── Header text opacity levels ── -->
+    <color name="white_70">#B3FFFFFF</color>
+    <color name="white_60">#99FFFFFF</color>
+
+    <!-- ── Section labels + green primary ── -->
+    <color name="green_version_text">#81C784</color>
+
+    <!-- ── Icon box tints (4 green shades for visual variety) ── -->
+    <color name="icon_green_1">#E8F5E9</color>   <!-- lightest -->
+    <color name="icon_green_2">#C8E6C9</color>   <!-- light -->
+    <color name="icon_green_3">#DCEDC8</color>   <!-- lime-green -->
+    <color name="icon_green_4">#F9FBE7</color>   <!-- very light yellow-green -->
+
+    <!-- ── Icon foreground tints (matching each box shade) ── -->
+    <color name="green_icon_1">#2E7D32</color>   <!-- medium green -->
+    <color name="green_icon_2">#1B5E20</color>   <!-- dark green -->
+    <color name="green_icon_3">#33691E</color>   <!-- olive green -->
+    <color name="green_icon_4">#558B2F</color>   <!-- mid olive -->
+
+    <!-- ── Logout ── -->
+    <color name="logout_red">#C62828</color>
+    <color name="logout_bg">#FFF5F5</color>
+    <color name="logout_border">#FFCDD2</color>
+    <color name="bg_green">#F1F8E9</color>
+
+    <!-- Bottom nav inactive state -->
+    <color name="nav_icon_unselected">#B0BEC5</color>
+    <color name="nav_text_unselected">#B0BEC5</color>
+
+    <!-- Search field -->
+    <color name="search_field_bg">#F3F4F6</color>
+    <color name="search_field_stroke">#E5E7EB</color>
+
+    <!-- Chat Bubbles -->
+    <color name="chat_user_bubble">#2E7D32</color>
+    <color name="chat_user_text">#FFFFFF</color>
+    <color name="chat_user_time">#DDE8DD</color>
+    <color name="chat_bot_bubble">#E8F5E9</color>
+
+    <!-- Overlay Backgrounds -->
+    <color name="progress_overlay_bg">#80FFFFFF</color>
+    <color name="splash_overlay_bg">#55000000</color>
+</resources>

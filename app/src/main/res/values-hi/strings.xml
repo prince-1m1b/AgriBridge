@@ -1,0 +1,126 @@
+<resources>
+
+    <!-- APPLICATION NAME -->
+    <string name="app_name">Agri Bridge</string>
+
+    <!-- BOTTOM_NAV -->
+    <string name="home">होम</string>
+    <string name="chat">चैट</string>
+    <string name="profile">प्रोफ़ाइल</string>
+
+    <!-- TITLE -->
+    <string name="customer_login_title">ग्राहक लॉगिन</string>
+    <string name="login">लॉगिन</string>
+    <string name="_login"> लॉगिन</string>
+    <string name="sign_up">साइन अप</string>
+
+    <!-- REQUIRED FIELDS -->
+    <string name="r_enter_first_name">प्रथम नाम दर्ज करें *</string>
+    <string name="r_enter_last_name">अंतिम नाम दर्ज करें *</string>
+    <string name="r_enter_name">नाम दर्ज करें *</string>
+    <string name="r_enter_email">ईमेल दर्ज करें</string>
+    <string name="r_enter_phone_number">फ़ोन नंबर दर्ज करें *</string>
+    <string name="r_enter_password">पासवर्ड दर्ज करें</string>
+    <string name="r_enter_confirm_password">पासवर्ड की पुष्टि करें</string>
+    <string name="r_enter_state">राज्य दर्ज करें</string>
+    <string name="r_enter_district">जिला दर्ज करें</string>
+
+    <!-- ERRORS -->
+    <string name="e_please_enter_phone_password"><![CDATA[कृपया फ़ोन और पासवर्ड दर्ज करें..!]]></string>
+    <string name="e_something_went_wrong">कुछ गलत हो गया</string>
+
+    <!-- OTHERS -->
+    <string name="error">त्रुटि</string>
+    <string name="success">सफलता</string>
+    <string name="welcome_back">वापसी पर स्वागत है!</string>
+    <string name="login_screen_description">कृपया अपने खाते में लॉगिन करने के लिए अपना पंजीकृत मोबाइल नंबर और पासवर्ड दर्ज करें।</string>
+    <string name="customer_registration">ग्राहक पंजीकरण</string>
+    <string name="fill_the_details_and_create_your_account">विवरण भरें और अपना खाता बनाएं।</string>
+    <string name="already_have_an_account">पहले से ही एक खाता है?</string>
+    <string name="dont_have_an_account">खाता नहीं है?</string>
+    <string name="search_design_by_code">कोड द्वारा डिजाइन खोजें</string>
+    <string name="search_result">खोज परिणाम</string>
+
+    <string name="hello_world">नमस्ते दुनिया!</string>
+    <string name="select_language">भाषा चुनें</string>
+    <string name="english">अंग्रेज़ी</string>
+    <string name="kannada">ಕನ್ನಡ</string>
+    <string name="hindi">हिंदी</string>
+
+    <string name="registration_successful">पंजीकरण सफल रहा</string>
+    <string name="account_created_msg">आपका खाता सफलतापूर्वक बन गया है। कृपया जारी रखने के लिए लॉगिन करें।</string>
+    <string name="ok">ठीक है</string>
+    <string name="success_title">सफलता!</string>
+    <string name="location">स्थान</string>
+    <string name="help_and_support">सहायता और समर्थन</string>
+    <string name="hello_blank_fragment">हैलो ब्लैंक फ्रैगमेंट</string>
+
+    <!-- NEW ADDITIONS FROM LAYOUTS AND CODE -->
+    <string name="login_details">लॉगिन विवरण</string>
+    <string name="enter_mobile_number">मोबाइल नंबर दर्ज करें</string>
+    <string name="enter_your_password">अपना पासवर्ड दर्ज करें</string>
+    <string name="personal_details">व्यक्तिगत विवरण</string>
+    <string name="contact_information">संपर्क जानकारी</string>
+    <string name="location_details">स्थान विवरण</string>
+    <string name="security">सुरक्षा</string>
+    <string name="splash_tagline">किसानों को स्मार्ट कृषि से जोड़ना</string>
+    <string name="splash_empowering_farmers">किसानों को सशक्त बनाना</string>
+    <string name="splash_cultivating_future">एक बेहतर भविष्य का निर्माण</string>
+    <string name="ask_anything">कुछ भी पूछें...</string>
+    <string name="favourite_fragment">पसंदीदा फ्रैगमेंट</string>
+    <string name="government_schemes">सरकारी योजनाएं</string>
+    <string name="view_all">सभी देखें</string>
+    <string name="loans">ऋण</string>
+    <string name="market_place">बाजार स्थान</string>
+    <string name="account_header">खाता</string>
+    <string name="language">भाषा</string>
+    <string name="english_default">अंग्रेजी (डिफ़ॉल्ट)</string>
+    <string name="mock_location">अहमदाबाद, गुजरात</string>
+    <string name="preferences_header">वरीयताएँ</string>
+    <string name="clear_chat">चैट साफ़ करें</string>
+    <string name="clear_chat_sub">सभी बातचीत का इतिहास हटाएं</string>
+    <string name="support_legal_header">सहायता और कानूनी</string>
+    <string name="help_support_sub">अक्सर पूछे जाने वाले प्रश्न, हमसे संपर्क करें</string>
+    <string name="terms_conditions">नियम और शर्तें</string>
+    <string name="terms_conditions_sub">उपयोग नीतियां</string>
+    <string name="privacy_policy">गोपनीयता नीति</string>
+    <string name="privacy_policy_sub">हम आपके डेटा को कैसे संभालते हैं</string>
+    <string name="log_out">लॉग आउट</string>
+    <string name="app_version">एग्रीब्रिज v1.0.0</string>
+    <string name="banner_title">अपने आस-पास के स्थानीय बाजारों की खोज करें</string>
+    <string name="banner_sub">अपनी उपज के लिए सर्वोत्तम मूल्य प्राप्त करें</string>
+    <string name="category_schemes">योजनाएं</string>
+    
+    <!-- VALIDATION ERRORS AND MESSAGES -->
+    <string name="error_first_name_required">प्रथम नाम आवश्यक है</string>
+    <string name="error_first_name_short">प्रथम नाम बहुत छोटा है</string>
+    <string name="error_last_name_required">अंतिम नाम आवश्यक है</string>
+    <string name="error_phone_required">मोबाइल नंबर आवश्यक है</string>
+    <string name="error_phone_invalid">एक वैध 10-अंकीय मोबाइल नंबर दर्ज करें</string>
+    <string name="error_email_invalid">एक वैध ईमेल पता दर्ज करें</string>
+    <string name="msg_logged_in">लॉग इन किया</string>
+    <string name="error_login_failed">लॉगिन विफल रहा</string>
+    <string name="error_registration_failed">पंजीकरण विफल रहा</string>
+    <string name="toolbar_chat_title">एग्री ब्रिज चैट बॉट</string>
+    <string name="toolbar_profile_title">उपयोगकर्ता प्रोफ़ाइल</string>
+
+    <!-- Home Fragment Empty States and Subsidies -->
+    <string name="subsidies">सब्सिडी</string>
+    <string name="no_schemes_available">कोई सरकारी योजना उपलब्ध नहीं है</string>
+    <string name="no_loans_available">कोई ऋण उपलब्ध नहीं है</string>
+    <string name="no_markets_available">कोई बाज़ार वस्तु उपलब्ध नहीं है</string>
+    <string name="no_subsidies_available">कोई सब्सिडी उपलब्ध नहीं है</string>
+    
+    <!-- Profile Fragment Detail Descriptions -->
+    <string name="terms_conditions_content"><![CDATA[एग्रीब्रिज में आपका स्वागत है! हमारे एप्लिकेशन को एक्सेस और उपयोग करके, आप निम्नलिखित उपयोग की शर्तों का पालन करने और उनसे बाध्य होने के लिए सहमत हैं:\n\n1. शर्तों की स्वीकृति: एग्रीब्रिज तक आपकी पहुंच और उपयोग विशेष रूप से इन नियमों और शर्तों के अधीन है।\n2. सामग्री: इस ऐप पर प्रदान की गई जानकारी सामान्य कृषि सहायता के लिए है। हम सटीकता बनाए रखने का प्रयास करते हैं, लेकिन हम पूर्णता की गारंटी नहीं देते हैं।\n3. उपयोगकर्ता खाता: आप अपने लॉगिन क्रेडेंशियल को गोपनीय रखने के लिए ज़िम्मेदार हैं।\n4. डेटा शुल्क: नेटवर्क-आधारित सुविधाओं का उपयोग करते समय मानक इंटरनेट डेटा शुल्क लागू होते हैं।]]></string>
+    <string name="privacy_policy_content"><![CDATA[आपकी गोपनीयता हमारे लिए महत्वपूर्ण है। एग्रीब्रिज की गोपनीयता नीति बताती है कि हम आपकी जानकारी को कैसे एकत्र, उपयोग और संसाधित करते हैं:\n\n1. सूचना का संग्रह: हम आपके क्षेत्र के लिए विशिष्ट कृषि डेटा तैयार करने के लिए पंजीकरण विवरण (नाम, फोन, राज्य, जिला) एकत्र करते हैं।\n2. चैट लॉग्स: सटीक एआई प्रतिक्रियाएं देने और सहायता सुविधाओं में सुधार करने के लिए एग्रीब्रिज चैटबॉट के साथ बातचीत लॉग को संसाधित किया जाता है।\n3. डेटा सुरक्षा: हम यह सुनिश्चित करने के लिए सुरक्षित भंडारण तंत्र लागू करते हैं कि आपके क्रेडेंशियल और व्यक्तिगत जानकारी सुरक्षित रहें।\n4. तृतीय-पक्ष सेवाएं: बाहरी वेब लिंक (जैसे सरकारी योजना पोर्टल) अपनी स्वतंत्र नीतियों के तहत काम करते हैं।]]></string>
+    <string name="help_support_content"><![CDATA[सहायता की आवश्यकता है? हम आपकी खेती की जरूरतों का समर्थन करने के लिए यहां हैं:\n\n• एग्रीब्रिज सहायता टीम:\n  ईमेल: support@agribridge.org\n  हेल्पलाइन: 1800-300-4560 (टोल-फ्री)\n\n• सामान्य अक्सर पूछे जाने वाले प्रश्न:\n  - भाषा का चयन कैसे करें? प्रोफाइल टैब पर \'भाषा\' पर क्लिक करें और अंग्रेजी, हिंदी या कन्नड़ चुनें।\n  - योजना का विवरण कैसे देखें? विस्तृत पॉपअप कार्ड विवरण देखने के लिए होम स्क्रीन पर किसी भी डैशबोर्ड कार्ड आइटम पर टैप करें।]]></string>
+
+    <string name="phone_number">फ़ोन नंबर</string>
+    <string name="email_address">ईमेल पता</string>
+    <string name="change_password">पासवर्ड बदलें</string>
+    <string name="update_account_password">खाता पासवर्ड अपडेट करें</string>
+    <string name="farmer_user">किसान उपयोगकर्ता</string>
+    <string name="location_not_set">स्थान सेट नहीं है</string>
+
+</resources>

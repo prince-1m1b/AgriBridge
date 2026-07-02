@@ -1,0 +1,126 @@
+<resources>
+
+    <!-- APPLICATION NAME -->
+    <string name="app_name">Agri Bridge</string>
+
+    <!-- BOTTOM_NAV -->
+    <string name="home">Home</string>
+    <string name="chat">Chat</string>
+    <string name="profile">Profile</string>
+
+    <!-- TITLE -->
+    <string name="customer_login_title">Customer Login</string>
+    <string name="login">Login</string>
+    <string name="_login"> Login</string>
+    <string name="sign_up">Sign Up</string>
+
+    <!-- REQUIRED FIELDS -->
+    <string name="r_enter_first_name">Enter First Name *</string>
+    <string name="r_enter_last_name">Enter Last Name *</string>
+    <string name="r_enter_name">Enter Name</string>
+    <string name="r_enter_email">Enter Email</string>
+    <string name="r_enter_phone_number">Enter Phone Number *</string>
+    <string name="r_enter_password">Enter Password</string>
+    <string name="r_enter_confirm_password">Enter Confirm Password</string>
+    <string name="r_enter_state">Enter State</string>
+    <string name="r_enter_district">Enter District</string>
+
+    <!-- ERRORS -->
+    <string name="e_please_enter_phone_password"><![CDATA[Please enter phone & password..!]]></string>
+    <string name="e_something_went_wrong">Something went wrong</string>
+
+    <!-- OTHERS -->
+    <string name="error">Error</string>
+    <string name="success">Success</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="login_screen_description">Please enter your registered mobile number and password to login to your account.</string>
+    <string name="customer_registration">Registration</string>
+    <string name="fill_the_details_and_create_your_account">Fill in the details and create your account.</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="dont_have_an_account">Don\'t have an account?</string>
+    <string name="search_design_by_code">Search design by code</string>
+    <string name="search_result">Search Result</string>
+
+    <string name="hello_world">Hello World!</string>
+    <string name="select_language">Select Language</string>
+    <string name="english">English</string>
+    <string name="kannada">Kannada</string>
+    <string name="hindi">Hindi</string>
+
+    <string name="registration_successful">Registration Successful</string>
+    <string name="account_created_msg">Your account has been created successfully. Please login to continue.</string>
+    <string name="ok">OK</string>
+    <string name="success_title">Success!</string>
+    <string name="location">Location</string>
+    <string name="help_and_support">Help and Support</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- NEW ADDITIONS FROM LAYOUTS AND CODE -->
+    <string name="login_details">LOGIN DETAILS</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="enter_your_password">Enter your Password</string>
+    <string name="personal_details">PERSONAL DETAILS</string>
+    <string name="contact_information">CONTACT INFORMATION</string>
+    <string name="location_details">LOCATION DETAILS</string>
+    <string name="security">SECURITY</string>
+    <string name="splash_tagline">Connecting Farmers to Smarter Agriculture</string>
+    <string name="splash_empowering_farmers">Empowering Farmers</string>
+    <string name="splash_cultivating_future">Cultivating a Better Future</string>
+    <string name="ask_anything">Ask anything...</string>
+    <string name="favourite_fragment">Favourite Fragment</string>
+    <string name="government_schemes">Government Schemes</string>
+    <string name="view_all">View All</string>
+    <string name="loans">Loans</string>
+    <string name="market_place">Market Place</string>
+    <string name="account_header">ACCOUNT</string>
+    <string name="language">Language</string>
+    <string name="english_default">English (Default)</string>
+    <string name="mock_location">Ahmedabad, Gujarat</string>
+    <string name="preferences_header">PREFERENCES</string>
+    <string name="clear_chat">Clear Chat</string>
+    <string name="clear_chat_sub">Remove all conversation history</string>
+    <string name="support_legal_header">SUPPORT &amp; LEGAL</string>
+    <string name="help_support_sub">FAQs, contact us</string>
+    <string name="terms_conditions">Terms &amp; Conditions</string>
+    <string name="terms_conditions_sub">Usage policies</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="privacy_policy_sub">How we handle your data</string>
+    <string name="log_out">Log Out</string>
+    <string name="app_version">AgriBridge v1.0.0</string>
+    <string name="banner_title">Discover Local Markets Near You</string>
+    <string name="banner_sub">Find the best prices for your produce</string>
+    <string name="category_schemes">Schemes</string>
+    
+    <!-- VALIDATION ERRORS AND MESSAGES -->
+    <string name="error_first_name_required">First name is required</string>
+    <string name="error_first_name_short">First name is too short</string>
+    <string name="error_last_name_required">Last name is required</string>
+    <string name="error_phone_required">Mobile number is required</string>
+    <string name="error_phone_invalid">Enter a valid 10-digit mobile number</string>
+    <string name="error_email_invalid">Enter a valid email address</string>
+    <string name="msg_logged_in">Logged In</string>
+    <string name="error_login_failed">Login failed</string>
+    <string name="error_registration_failed">Registration failed</string>
+    <string name="toolbar_chat_title">Agri Bridge Chat Bot</string>
+    <string name="toolbar_profile_title">User Profile</string>
+
+    <!-- Home Fragment Empty States and Subsidies -->
+    <string name="subsidies">Subsidies</string>
+    <string name="no_schemes_available">No government schemes available</string>
+    <string name="no_loans_available">No loans available</string>
+    <string name="no_markets_available">No marketplace items available</string>
+    <string name="no_subsidies_available">No subsidies available</string>
+    
+    <!-- Profile Fragment Detail Descriptions -->
+    <string name="terms_conditions_content"><![CDATA[Welcome to AgriBridge! By accessing and using our application, you agree to comply with and be bound by the following terms of use:\n\n1. Acceptance of Terms: Your access to and use of AgriBridge is subject exclusively to these Terms and Conditions.\n2. Content: The information provided on this app is for general agricultural assistance. We strive to maintain accuracy, but we do not guarantee completeness.\n3. User Account: You are responsible for keeping your login credentials confidential.\n4. Data Charges: Standard internet data charges apply while using network-based features.]]></string>
+    <string name="privacy_policy_content"><![CDATA[Your privacy is important to us. AgriBridge\'s Privacy Policy describes how we collect, use, and process your information:\n\n1. Information Collection: We collect registration details (name, phone, state, district) to tailor agricultural data specific to your region.\n2. Chat Logs: Conversation logs with AgriBridge chatbot are processed to deliver accurate AI responses and improve support features.\n3. Data Protection: We implement secure storage mechanisms to ensure your credentials and personal info remain protected.\n4. Third-Party Services: External web links (e.g. government scheme portals) operate under their own independent policies.]]></string>
+    <string name="help_support_content"><![CDATA[Need assistance? We are here to support your farming needs:\n\n• AgriBridge Support Team:\n  Email: support@agribridge.org\n  Helpline: 1800-300-4560 (Toll-Free)\n\n• Common FAQs:\n  - How to select language? Click \'Language\' on the Profile tab and choose English, Hindi, or Kannada.\n  - How to view scheme details? Tap on any dashboard card item on the Home screen to view a detailed popup card details.]]></string>
+
+    <string name="phone_number">Phone Number</string>
+    <string name="email_address">Email Address</string>
+    <string name="change_password">Change Password</string>
+    <string name="update_account_password">Update account password</string>
+    <string name="farmer_user">Farmer User</string>
+    <string name="location_not_set">Location not set</string>
+
+</resources>

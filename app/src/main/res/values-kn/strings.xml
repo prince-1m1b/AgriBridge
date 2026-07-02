@@ -1,0 +1,126 @@
+<resources>
+
+    <!-- APPLICATION NAME -->
+    <string name="app_name">ಅಗ್ರಿ ಬ್ರಿಡ್ಜ್</string>
+
+    <!-- BOTTOM_NAV -->
+    <string name="home">ಮುಖಪುಟ</string>
+    <string name="chat">ಚಾಟ್</string>
+    <string name="profile">ಪ್ರೊಫೈಲ್</string>
+
+    <!-- TITLE -->
+    <string name="customer_login_title">ಗ್ರಾಹಕ ಲಾಗಿನ್</string>
+    <string name="login">ಲಾಗಿನ್</string>
+    <string name="_login"> ಲಾಗಿನ್</string>
+    <string name="sign_up">ಸೈನ್ ಅಪ್</string>
+
+    <!-- REQUIRED FIELDS -->
+    <string name="r_enter_first_name">ಮೊದಲ ಹೆಸರನ್ನು ನಮೂದಿಸಿ *</string>
+    <string name="r_enter_last_name">ಕೊನೆಯ ಹೆಸರನ್ನು ನಮೂದಿಸಿ *</string>
+    <string name="r_enter_name">ಹೆಸರನ್ನು ನಮೂದಿಸಿ *</string>
+    <string name="r_enter_email">ಇಮೇಲ್ ನಮೂದಿಸಿ</string>
+    <string name="r_enter_phone_number">ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ *</string>
+    <string name="r_enter_password">ಪಾಸ್‌ವರ್ಡ್ ನಮೂದಿಸಿ</string>
+    <string name="r_enter_confirm_password">ಪಾಸ್‌ವರ್ಡ್ ಖಚಿತಪಡಿಸಿ</string>
+    <string name="r_enter_state">ರಾಜ್ಯವನ್ನು ನಮೂದಿಸಿ</string>
+    <string name="r_enter_district">ಜಿಲ್ಲೆಯನ್ನು ನಮೂದಿಸಿ</string>
+
+    <!-- ERRORS -->
+    <string name="e_please_enter_phone_password"><![CDATA[ದಯವಿಟ್ಟು ფೋನ್ ಮತ್ತು ಪಾಸ್‌ವರ್ಡ್ ನಮೂದಿಸಿ..!]]></string>
+    <string name="e_something_went_wrong">ಏನೋ ತಪ್ಪಾಗಿದೆ</string>
+
+    <!-- OTHERS -->
+    <string name="error">ದೋಷ</string>
+    <string name="success">ಯಶಸ್ಸು</string>
+    <string name="welcome_back">ಮರಳಿ ಸ್ವಾಗತ!</string>
+    <string name="login_screen_description">ಲಾಗಿನ್ ಮಾಡಲು ದಯವಿಟ್ಟು ನಿಮ್ಮ ನೋಂದಾಯಿತ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ಮತ್ತು ಪಾಸ್‌ವರ್ಡ್ ನಮೂದಿಸಿ.</string>
+    <string name="customer_registration">ಗ್ರಾಹಕ ನೋಂದಣಿ</string>
+    <string name="fill_the_details_and_create_your_account">ವಿವರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ ಮತ್ತು ನಿಮ್ಮ ಖಾತೆಯನ್ನು ರಚಿಸಿ.</string>
+    <string name="already_have_an_account">ಈಗಾಗಲೇ ಖಾತೆ ಹೊಂದಿದ್ದೀರಾ?</string>
+    <string name="dont_have_an_account">ಖಾತೆ ಹೊಂದಿಲ್ಲವೇ?</string>
+    <string name="search_design_by_code">ಕೋಡ್ ಮೂಲಕ ವಿನ್ಯಾಸವನ್ನು ಹುಡುಕಿ</string>
+    <string name="search_result">ಹುಡುಕಾಟದ ಫಲಿತಾಂಶ</string>
+
+    <string name="hello_world">ಹಲೋ ವರ್ಲ್ಡ್!</string>
+    <string name="select_language">ಭಾಷೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿ</string>
+    <string name="english">ಇಂಗ್ಲಿಷ್</string>
+    <string name="kannada">ಕನ್ನಡ</string>
+    <string name="hindi">ಹಿಂದಿ</string>
+
+    <string name="registration_successful">ನೋಂದಣಿ ಯಶಸ್ವಿಯಾಗಿದೆ</string>
+    <string name="account_created_msg">ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ರಚಿಸಲಾಗಿದೆ. ಮುಂದುವರೆಯಲು ದಯವಿಟ್ಟು ಲಾಗಿನ್ ಮಾಡಿ.</string>
+    <string name="ok">ಸರಿ</string>
+    <string name="success_title">ಯಶಸ್ಸು!</string>
+    <string name="location">ಸ್ಥಳ</string>
+    <string name="help_and_support">ಸಹಾಯ ಮತ್ತು ಬೆಂಬಲ</string>
+    <string name="hello_blank_fragment">ಹಲೋ ಬ್ಲಾಂಕ್ ಫ್ರಾಗ್ಮೆಂಟ್</string>
+
+    <!-- NEW ADDITIONS FROM LAYOUTS AND CODE -->
+    <string name="login_details">ಲಾಗಿನ್ ವಿವರಗಳು</string>
+    <string name="enter_mobile_number">ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ</string>
+    <string name="enter_your_password">ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ನಮೂದಿಸಿ</string>
+    <string name="personal_details">ವೈಯಕ್ತಿಕ ವಿವರಗಳು</string>
+    <string name="contact_information">ಸಂಪರ್ಕ ಮಾಹಿತಿ</string>
+    <string name="location_details">ಸ್ಥಳದ ವಿವರಗಳು</string>
+    <string name="security">ಭದ್ರತೆ</string>
+    <string name="splash_tagline">ರೈತರನ್ನು ಸ್ಮಾರ್ಟ್ ಕೃಷಿಗೆ ಸಂಪರ್ಕಿಸುವುದು</string>
+    <string name="splash_empowering_farmers">ರೈತರ ಸಬಲೀಕರಣ</string>
+    <string name="splash_cultivating_future">ಉತ್ತಮ ಭವಿಷ್ಯವನ್ನು ಬೆಳೆಸುವುದು</string>
+    <string name="ask_anything">ಏನನ್ನಾದರೂ ಕೇಳಿ...</string>
+    <string name="favourite_fragment">ನೆಚ್ಚಿನ ಫ್ರಾಗ್ಮೆಂಟ್</string>
+    <string name="government_schemes">ಸರ್ಕಾರಿ ಯೋಜನೆಗಳು</string>
+    <string name="view_all">ಎಲ್ಲವನ್ನೂ ವೀಕ್ಷಿಸಿ</string>
+    <string name="loans">ಸಾಲಗಳು</string>
+    <string name="market_place">ಮಾರುಕಟ್ಟೆ ಸ್ಥಳ</string>
+    <string name="account_header">ಖಾತೆ</string>
+    <string name="language">ಭಾಷೆ</string>
+    <string name="english_default">ಇಂಗ್ಲಿಷ್ (ಡೀಫಾಲ್ಟ್)</string>
+    <string name="mock_location">ಅಹಮದಾಬಾದ್, ಗುಜರಾತ್</string>
+    <string name="preferences_header">ಆದ್ಯತೆಗಳು</string>
+    <string name="clear_chat">ಚಾಟ್ ತೆರವುಗೊಳಿಸಿ</string>
+    <string name="clear_chat_sub">ಎಲ್ಲಾ ಸಂಭಾಷಣೆಯ ಇತಿಹಾಸವನ್ನು ತೆಗೆದುಹಾಕಿ</string>
+    <string name="support_legal_header">ಬೆಂಬಲ ಮತ್ತು ಕಾನೂನು</string>
+    <string name="help_support_sub">FAQ ಗಳು, ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ</string>
+    <string name="terms_conditions">ನಿಯಮಗಳು ಮತ್ತು ನಿಬಂಧನೆಗಳು</string>
+    <string name="terms_conditions_sub">ಬಳಕೆ ನೀತಿಗಳು</string>
+    <string name="privacy_policy">ಗೌಪ್ಯತಾ ನೀತಿ</string>
+    <string name="privacy_policy_sub">ನಿಮ್ಮ ಡೇಟಾವನ್ನು ನಾವು ಹೇಗೆ ನಿರ್ವಹಿಸುತ್ತೇವೆ</string>
+    <string name="log_out">ಲಾಗ್ ಔಟ್</string>
+    <string name="app_version">ಅಗ್ರಿಬ್ರಿಡ್ಜ್ v1.0.0</string>
+    <string name="banner_title">ನಿಮ್ಮ ಹತ್ತಿರದ ಸ್ಥಳೀಯ ಮಾರುಕಟ್ಟೆಗಳನ್ನು ಅನ್ವೇಷಿಸಿ</string>
+    <string name="banner_sub">ನಿಮ್ಮ ಉತ್ಪನ್ನಕ್ಕೆ ಉತ್ತಮ ಬೆಲೆಯನ್ನು ಕಂಡುಕೊಳ್ಳಿ</string>
+    <string name="category_schemes">ಯೋಜನೆಗಳು</string>
+    
+    <!-- VALIDATION ERRORS AND MESSAGES -->
+    <string name="error_first_name_required">ಮೊದಲ ಹೆಸರು ಅಗತ್ಯವಿದೆ</string>
+    <string name="error_first_name_short">ಮೊದಲ ಹೆಸರು ತುಂಬಾ ಚಿಕ್ಕದಾಗಿದೆ</string>
+    <string name="error_last_name_required">ಕೊನೆಯ ಹೆಸರು ಅಗತ್ಯವಿದೆ</string>
+    <string name="error_phone_required">ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ಅಗತ್ಯವಿದೆ</string>
+    <string name="error_phone_invalid">ಮಾನ್ಯವಾದ 10-ಅಂಕಿಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ</string>
+    <string name="error_email_invalid">ಮಾನ್ಯವಾದ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ</string>
+    <string name="msg_logged_in">ಲಾಗ್ ಇನ್ ಮಾಡಲಾಗಿದೆ</string>
+    <string name="error_login_failed">ಲಾಗಿನ್ ವಿಫಲವಾಗಿದೆ</string>
+    <string name="error_registration_failed">ನೋಂದಣಿ ವಿಫಲವಾಗಿದೆ</string>
+    <string name="toolbar_chat_title">ಅಗ್ರಿ ಬ್ರಿಡ್ಜ್ ಚಾಟ್ ಬಾಟ್</string>
+    <string name="toolbar_profile_title">ಬಳಕೆದಾರರ ಪ್ರೊಫೈಲ್</string>
+
+    <!-- Home Fragment Empty States and Subsidies -->
+    <string name="subsidies">ಸಬ್ಸಿಡಿಗಳು</string>
+    <string name="no_schemes_available">ಯಾವುದೇ ಸರ್ಕಾರಿ ಯೋಜನೆಗಳು ಲಭ್ಯವಿಲ್ಲ</string>
+    <string name="no_loans_available">ಯಾವುದೇ ಸಾಲಗಳು ಲಭ್ಯವಿಲ್ಲ</string>
+    <string name="no_markets_available">ಯಾವುದೇ ಮಾರುಕಟ್ಟೆ ವಸ್ತುಗಳು ಲಭ್ಯವಿಲ್ಲ</string>
+    <string name="no_subsidies_available">ಯಾವುದೇ ಸಬ್ಸಿಡಿಗಳು ಲಭ್ಯವಿಲ್ಲ</string>
+    
+    <!-- Profile Fragment Detail Descriptions -->
+    <string name="terms_conditions_content"><![CDATA[ಅಗ್ರಿಬ್ರಿಡ್ಜ್‌ಗೆ ಸ್ವಾಗತ! ನಮ್ಮ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಪ್ರವೇಶಿಸುವ ಮತ್ತು ಬಳಸುವ ಮೂಲಕ, ನೀವು ಈ ಕೆಳಗಿನ ಬಳಕೆಯ ನಿಯಮಗಳನ್ನು ಅನುಸರಿಸಲು ಮತ್ತು ಅದಕ್ಕೆ ಬದ್ಧರಾಗಿರಲು ಒಪ್ಪುತ್ತೀರಿ:\n\n1. ನಿಯಮಗಳ ಅಂಗೀಕಾರ: ಅಗ್ರಿಬ್ರಿಡ್ಜ್ ಪ್ರವೇಶ ಮತ್ತು ಬಳಕೆ ಸಂಪೂರ್ಣವಾಗಿ ಈ ನಿಯಮಗಳು ಮತ್ತು ನಿಬಂಧನೆಗಳಿಗೆ ಒಳಪಟ್ಟಿರುತ್ತದೆ.\n2. ವಿಷಯ: ಈ ಅಪ್ಲಿಕೇಶನ್‌ನಲ್ಲಿ ಒದಗಿಸಲಾದ ಮಾಹಿತಿಯು ಸಾಮಾನ್ಯ ಕೃಷಿ ಸಹಾಯಕ್ಕಾಗಿ ಆಗಿದೆ. ನಾವು ನಿಖರತೆಯನ್ನು ಕಾಪಾಡಿಕೊಳ್ಳಲು ಶ್ರಮಿಸುತ್ತೇವೆ, ಆದರೆ ನಾವು ಸಂಪೂರ್ಣತೆಯ ಭರವಸೆ ನೀಡುವುದಿಲ್ಲ.\n3. ಬಳಕೆದಾರರ ಖಾತೆ: ನಿಮ್ಮ ಲಾಗಿನ್ ರುಜುವಾತುಗಳನ್ನು ಗೌಪ್ಯವಾಗಿಡಲು ನೀವೇ ಜವಾಬ್ದಾರರಾಗಿರುತ್ತೀರಿ.\n4. ಡೇಟಾ ಶುಲ್ಕಗಳು: ನೆಟ್‌ವರ್ಕ್ ಆಧಾರಿತ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಬಳಸುವಾಗ ಪ್ರಮಾಣಿತ ಇಂಟರ್ನೆಟ್ ಡೇಟಾ ಶುಲ್ಕಗಳು ಅನ್ವಯಿಸುತ್ತವೆ.]]></string>
+    <string name="privacy_policy_content"><![CDATA[ನಿಮ್ಮ ಗೌಪ್ಯತೆ ನಮಗೆ ಪ್ರಮುಖವಾಗಿದೆ. ಅಗ್ರಿಬ್ರಿಡ್ಜ್ ಗೌಪ್ಯತಾ ನೀತಿಯು ನಿಮ್ಮ ಮಾಹಿತಿಯನ್ನು ನಾವು ಹೇಗೆ ಸಂಗ್ರಹಿಸುತ್ತೇವೆ, ಬಳಸುತ್ತೇವೆ ಮತ್ತು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸುತ್ತೇವೆ ಎಂಬುದನ್ನು ವಿವರಿಸುತ್ತದೆ:\n\n1. ಮಾಹಿತಿ ಸಂಗ್ರಹಣೆ: ನಿಮ್ಮ ಪ್ರದೇಶಕ್ಕೆ ನಿರ್ದಿಷ್ಟವಾದ ಕೃಷಿ ಡೇಟಾವನ್ನು ಒದಗಿಸಲು ನಾವು ನೋಂದಣಿ ವಿವರಗಳನ್ನು (ಹೆಸರು, ಫೋನ್, ರಾಜ್ಯ, ಜಿಲ್ಲೆ) ಸಂಗ್ರಹಿಸುತ್ತೇವೆ.\n2. ಚಾಟ್ ಲಾಗ್‌ಗಳು: ನಿಖರವಾದ AI ಪ್ರತಿಕ್ರಿಯೆಗಳನ್ನು ನೀಡಲು ಮತ್ತು ಬೆಂಬಲ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಸುಧಾರಿಸಲು ಅಗ್ರಿಬ್ರಿಡ್ಜ್ ಚಾಟ್‌ಬಾಟ್‌‌ನೊಂದಿಗಿನ ಸಂಭಾಷಣೆಯ ಲಾಗ್‌ಗಳನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲಾಗುತ್ತದೆ.\n3. ಡೇಟಾ ರಕ್ಷಣೆ: ನಿಮ್ಮ ರುಜುವಾತುಗಳು ಮತ್ತು ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಸುರಕ್ಷಿತವಾಗಿರುವುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಲು ನಾವು ಸುರಕ್ಷಿತ ಸಂಗ್ರಹಣಾ ವ್ಯವಸ್ಥೆಗಳನ್ನು ಅಳವಡಿಸುತ್ತೇವೆ.\n4. ತೃತೀಯ ಸೇವೆಗಳು: ಬಾಹ್ಯ ವೆಬ್ ಲಿಂಕ್‌ಗಳು (ಉದಾ. ಸರ್ಕಾರಿ ಯೋಜನೆ ಪೋರ್ಟಲ್‌ಗಳು) ತಮ್ಮದೇ ಆದ ಸ್ವತಂತ್ರ ನೀತಿಗಳ ಅಡಿಯಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತವೆ.]]></string>
+    <string name="help_support_content"><![CDATA[ಸಹಾಯ ಬೇಕೇ? ನಿಮ್ಮ ಕೃಷಿ ಅಗತ್ಯಗಳನ್ನು ಬೆಂಬಲಿಸಲು ನಾವು ಇಲ್ಲಿದ್ದೇವೆ:\n\n• ಅಗ್ರಿಬ್ರಿಡ್ಜ್ ಬೆಂಬಲ ತಂಡ:\n  ಇಮೇಲ್: support@agribridge.org\n  ಹೆಲ್ಪ್‌ಲೈನ್: 1800-300-4560 (ಟೋಲ್-ಪ್ರಿ)\n\n• ಸಾಮಾನ್ಯ FAQ ಗಳು:\n  - ಭಾಷೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡುವುದು ಹೇಗೆ? ಪ್ರೊಫೈಲ್ ಟ್ಯಾಬ್‌ನಲ್ಲಿ \'ಭಾಷೆ\' ಕ್ಲಿಕ್ ಮಾಡಿ ಮತ್ತು ಇಂಗ್ಲಿಷ್, ಹಿಂದಿ ಅಥವಾ ಕನ್ನಡವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ.\n  - ಯೋಜನೆಯ ವಿವರಗಳನ್ನು ವೀಕ್ಷಿಸುವುದು ಹೇಗೆ? ವಿವರವಾದ ಪಾಪ್‌ಅಪ್ ಕಾರ್ಡ್ ವಿವರಗಳನ್ನು ವೀಕ್ಷಿಸಲು ಮುಖಪುಟ ಪರದೆಯಲ್ಲಿರುವ ಯಾವುದೇ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಕಾರ್ಡ್ ಐಟಂ ಅನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ.]]></string>
+
+    <string name="phone_number">ಫೋನ್ ಸಂಖ್ಯೆ</string>
+    <string name="email_address">ಇಮೇಲ್ ವಿಳಾಸ</string>
+    <string name="change_password">ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ</string>
+    <string name="update_account_password">ಖಾತೆ ಪಾಸ್‌ವರ್ಡ್ ನವೀಕರಿಸಿ</string>
+    <string name="farmer_user">ರೈತ ಬಳಕೆದಾರ</string>
+    <string name="location_not_set">ಸ್ಥಳವನ್ನು ಹೊಂದಿಸಿಲ್ಲ</string>
+
+</resources>
