@@ -27,4 +27,7 @@ interface ChatApiRequest {
 
     @DELETE("chat/conversations")
     suspend fun clearChatHistory(): Response<Any?>?
+
+    @GET("chat/limit-status")
+    suspend fun getChatLimitStatus(): Response<Any?>?
 }

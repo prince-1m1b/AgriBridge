@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Ground / Field line -->
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M2,20h20v2H2z" />
+    <!-- Stem and sprout leaves -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M12,19c0,-4.5 1,-8 5,-9.5 -0.5,3.5 -2.5,6 -5,9.5z" />
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M12,19c0,-5.5 -1,-9.5 -6,-11.5 0.5,4 3,7 6,11.5z" />
+    <!-- Top central bud -->
+    <path
+        android:fillColor="#81C784"
+        android:pathData="M12,10c-1.5,-3 0,-7 0,-7s1.5,4 0,7z" />
+    <!-- Sun glow behind -->
+    <path
+        android:fillColor="#FAC775"
+        android:pathData="M12,2A2,2 0 1,0 12,6A2,2 0 1,0 12,2Z" />
+</vector>

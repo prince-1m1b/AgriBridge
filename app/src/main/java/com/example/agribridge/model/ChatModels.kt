@@ -45,3 +45,12 @@ data class ChatHistoryItem(
     @SerializedName("response_language") val responseLanguage: String? = null,
     @SerializedName("timestamp") val timestamp: String? = null
 )
+
+data class LimitStatusResponseData(
+    @SerializedName("daily_limit") val dailyLimit: Int = 10,
+    @SerializedName("questions_asked") val questionsAsked: Int = 0,
+    @SerializedName("questions_remaining") val questionsRemaining: Int = 0,
+    @SerializedName("limit_reached") val limitReached: Boolean = false,
+    @SerializedName("reset_time_utc") val resetTimeUtc: String? = null,
+    @SerializedName("seconds_until_reset") val secondsUntilReset: Long = 0
+)

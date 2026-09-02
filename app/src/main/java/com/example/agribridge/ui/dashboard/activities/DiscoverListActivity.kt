@@ -79,6 +79,7 @@ class DiscoverListActivity : AppCompatActivity() {
         val language = when (langCode) {
             "hi" -> "hindi"
             "kn" -> "kannada"
+            "mr" -> "marathi"
             else -> "english"
         }
 

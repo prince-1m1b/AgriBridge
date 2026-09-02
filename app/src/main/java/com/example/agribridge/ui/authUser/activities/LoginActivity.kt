@@ -123,6 +123,7 @@ class LoginActivity : AppCompatActivity() {
                         etPhone.setText(formatted.toString())
                         etPhone.setSelection(formatted.length)
                         isEditing = false
+
                     } catch (e: Exception) {
                         toast(e.message)
                     }

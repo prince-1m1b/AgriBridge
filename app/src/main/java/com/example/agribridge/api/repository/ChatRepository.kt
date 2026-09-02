@@ -25,4 +25,8 @@ class ChatRepository(private val apiRequest: ChatApiRequest?) : ApiRequestRespon
     suspend fun clearChatHistory() = apiRequest {
         apiRequest?.clearChatHistory()
     }
+
+    suspend fun getChatLimitStatus() = apiRequest {
+        apiRequest?.getChatLimitStatus()
+    }
 }

@@ -1,0 +1,139 @@
+<resources>
+
+    <!-- APPLICATION NAME -->
+    <string name="app_name">Agri Bridge</string>
+
+    <!-- BOTTOM_NAV -->
+    <string name="home">मुख्यपृष्ठ</string>
+    <string name="chat">चॅट</string>
+    <string name="profile">प्रोफाइल</string>
+
+    <!-- TITLE -->
+    <string name="customer_login_title">ग्राहक लॉगिन</string>
+    <string name="login">लॉगिन</string>
+    <string name="_login"> लॉगिन</string>
+    <string name="sign_up">साइन अप</string>
+
+    <!-- REQUIRED FIELDS -->
+    <string name="r_enter_first_name">पहिले नाव प्रविष्ट करा *</string>
+    <string name="r_enter_last_name">आडनाव प्रविष्ट करा *</string>
+    <string name="r_enter_name">नाव प्रविष्ट करा *</string>
+    <string name="r_enter_email">ईमेल प्रविष्ट करा</string>
+    <string name="r_enter_phone_number">फोन नंबर प्रविष्ट करा *</string>
+    <string name="r_enter_password">पासवर्ड प्रविष्ट करा</string>
+    <string name="r_enter_confirm_password">पासवर्डची पुष्टी करा</string>
+    <string name="r_enter_state">राज्य प्रविष्ट करा</string>
+    <string name="r_enter_district">जिल्हा प्रविष्ट करा</string>
+
+    <!-- ERRORS -->
+    <string name="e_please_enter_phone_password"><![CDATA[कृपया फोन आणि पासवर्ड प्रविष्ट करा..!]]></string>
+    <string name="e_something_went_wrong">काहीतरी चूक झाली</string>
+
+    <!-- OTHERS -->
+    <string name="error">त्रुटी</string>
+    <string name="success">यश</string>
+    <string name="welcome_back">पुन्हा स्वागत आहे!</string>
+    <string name="login_screen_description">आपल्या खात्यात लॉगिन करण्यासाठी कृपया आपला नोंदणीकृत मोबाईल नंबर आणि पासवर्ड प्रविष्ट करा.</string>
+    <string name="customer_registration">ग्राहक नोंदणी</string>
+    <string name="fill_the_details_and_create_your_account">तपशील भरा आणि आपले खाते तयार करा.</string>
+    <string name="already_have_an_account">आधीच खाते आहे का?</string>
+    <string name="dont_have_an_account">खाते नाही का?</string>
+    <string name="search_design_by_code">कोडद्वारे डिझाइन शोधा</string>
+    <string name="search_result">शोध निकाल</string>
+
+    <string name="hello_world">नमस्ते जग!</string>
+    <string name="select_language">भाषा निवडा</string>
+    <string name="english">English</string>
+    <string name="kannada">ಕನ್ನಡ</string>
+    <string name="hindi">हिंदी</string>
+    <string name="marathi">मराठी</string>
+
+    <string name="registration_successful">नोंदणी यशस्वी झाली</string>
+    <string name="account_created_msg">आपले खाते यशस्वीरित्या तयार झाले आहे. कृपया सुरू ठेवण्यासाठी लॉगिन करा.</string>
+    <string name="ok">ठीक आहे</string>
+    <string name="success_title">यशस्वी!</string>
+    <string name="location">स्थान</string>
+    <string name="help_and_support">मदत आणि सहाय्य</string>
+    <string name="hello_blank_fragment">हॅलो रिक्त फ्रॅगमेंट</string>
+
+    <!-- NEW ADDITIONS FROM LAYOUTS AND CODE -->
+    <string name="login_details">लॉगिन तपशील</string>
+    <string name="enter_mobile_number">मोबाईल नंबर प्रविष्ट करा</string>
+    <string name="enter_your_password">आपला पासवर्ड प्रविष्ट करा</string>
+    <string name="personal_details">वैयक्तिक तपशील</string>
+    <string name="contact_information">संपर्क माहिती</string>
+    <string name="location_details">स्थान तपशील</string>
+    <string name="security">सुरक्षा</string>
+    <string name="splash_tagline">शेतकऱ्यांना स्मार्ट शेतीशी जोडणे</string>
+    <string name="splash_empowering_farmers">शेतकऱ्यांचे सक्षमीकरण</string>
+    <string name="splash_cultivating_future">उज्ज्वल भविष्याची निर्मिती</string>
+    <string name="ask_anything">काहीही विचारा...</string>
+    <string name="favourite_fragment">आवडते फ्रॅगमेंट</string>
+    <string name="government_schemes">शासकीय योजना</string>
+    <string name="view_all">सर्व पहा</string>
+    <string name="loans">कर्ज योजना</string>
+    <string name="market_place">बाजारपेठ</string>
+    <string name="account_header">खाते</string>
+    <string name="language">भाषा</string>
+    <string name="english_default">इंग्रजी (डीफॉल्ट)</string>
+    <string name="mock_location">अहमदाबाद, गुजरात</string>
+    <string name="preferences_header">प्राधान्ये</string>
+    <string name="clear_chat">चॅट साफ करा</string>
+    <string name="clear_chat_sub">सर्व संभाषण इतिहास हटवा</string>
+    <string name="support_legal_header">मदत आणि कायदेशीर</string>
+    <string name="help_support_sub">वारंवार विचारले जाणारे प्रश्न, आमच्याशी संपर्क साधा</string>
+    <string name="terms_conditions">नियम आणि अटी</string>
+    <string name="terms_conditions_sub">वापर धोरणे</string>
+    <string name="privacy_policy">गोपनीयता धोरण</string>
+    <string name="privacy_policy_sub">आम्ही तुमचा डेटा कसा हाताळतो</string>
+    <string name="log_out">लॉग आउट</string>
+    <string name="app_version">AgriBridge v1.0.0</string>
+    <string name="banner_title">आपल्या जवळील स्थानिक बाजारपेठा शोधा</string>
+    <string name="banner_sub">आपल्या शेतमालासाठी सर्वोत्तम भाव मिळवा</string>
+    <string name="category_schemes">योजना</string>
+    
+    <!-- VALIDATION ERRORS AND MESSAGES -->
+    <string name="error_first_name_required">पहिले नाव आवश्यक आहे</string>
+    <string name="error_first_name_short">पहिले नाव खूप लहान आहे</string>
+    <string name="error_last_name_required">आडनाव आवश्यक आहे</string>
+    <string name="error_phone_required">मोबाईल नंबर आवश्यक आहे</string>
+    <string name="error_phone_invalid">वैध १०-अंकी मोबाईल नंबर प्रविष्ट करा</string>
+    <string name="error_email_invalid">वैध ईमेल पत्ता प्रविष्ट करा</string>
+    <string name="msg_logged_in">लॉग इन केले</string>
+    <string name="error_login_failed">लॉगिन अयशस्वी झाले</string>
+    <string name="error_registration_failed">नोंदणी अयशस्वी झाली</string>
+    <string name="toolbar_chat_title">Agri Bridge चॅट बॉट</string>
+    <string name="toolbar_profile_title">वापरकर्ता प्रोफाइल</string>
+
+    <!-- Home Fragment Empty States and Subsidies -->
+    <string name="subsidies">शासकीय अनुदाने</string>
+    <string name="no_schemes_available">कोणत्याही शासकीय योजना उपलब्ध नाहीत</string>
+    <string name="no_loans_available">कोणतीही कर्ज योजना उपलब्ध नाही</string>
+    <string name="no_markets_available">कोणत्याही बाजारपेठ वस्तू उपलब्ध नाहीत</string>
+    <string name="no_subsidies_available">कोणतेही अनुदान उपलब्ध नाही</string>
+    
+    <!-- Profile Fragment Detail Descriptions -->
+    <string name="terms_conditions_content"><![CDATA[AgriBridge मध्ये आपले स्वागत आहे! आमचा ॲप्लिकेशन वापरून, आपण खालील वापराच्या नियमांचे पालन करण्यास आणि त्यांच्याशी बांधील राहण्यास सहमती दर्शवता:\n\n१. अटींची स्वीकृती: AgriBridge चा आपला वापर पूर्णपणे या नियम आणि अटींच्या अधीन आहे.\n२. सामग्री: या ॲपवर दिलेली माहिती सामान्य कृषी मार्गदर्शनासाठी आहे. आम्ही अचूकता राखण्याचा प्रयत्न करतो, परंतु संपूर्णतेची हमी देत नाही.\n३. वापरकर्ता खाते: आपले लॉगिन तपशील गोपनीय ठेवण्यासाठी आपण स्वतः जबाबदार आहात.\n४. डेटा शुल्क: नेटवर्क-आधारित वैशिष्ट्ये वापरताना मानक इंटरनेट डेटा शुल्क लागू होतात.]]></string>
+    <string name="privacy_policy_content"><![CDATA[आपली गोपनीयता आमच्यासाठी महत्त्वाची आहे. AgriBridge चे गोपनीयता धोरण आम्ही आपली माहिती कशी संकलित, वापर आणि प्रक्रिया करतो याचे वर्णन करते:\n\n१. माहिती संकलन: आपल्या भागासाठी उपयुक्त कृषी डेटा उपलब्ध करून देण्यासाठी आम्ही नोंदणी तपशील (नाव, फोन, राज्य, जिल्हा) गोळा करतो.\n२. चॅट नोंदी: अचूक कृषी मार्गदर्शन देण्यासाठी आणि सपोर्ट सुधारण्यासाठी AgriBridge चॅटबॉटशी संभाषणाच्या नोंदी प्रक्रिया केल्या जातात.\n३. डेटा सुरक्षा: आपली माहिती सुरक्षित ठेवण्यासाठी आम्ही कडक सुरक्षा व्यवस्था वापरतो.\n४. तृतीय-पक्ष सेवा: बाह्य संकेतस्थळ लिंक्स (उदा. शासकीय योजना पोर्टल) त्यांच्या स्वतःच्या धोरणांनुसार काम करतात.]]></string>
+    <string name="help_support_content"><![CDATA[मदत हवी आहे का? आम्ही आपल्या शेतीच्या सर्व गरजांमध्ये सहाय्य करण्यास सदैव तयार आहोत:\n\n• AgriBridge सपोर्ट टीम:\n  ईमेल: support@agribridge.org\n  हेल्पलाईन: 1800-300-4560 (टोल-फ्री)\n\n• वारंवार विचारले जाणारे प्रश्न:\n  - भाषा कशी बदलावी? प्रोफाइल टॅबवर \'भाषा\' निवडा आणि इंग्रजी, हिंदी, कन्नड किंवा मराठी निवडा.\n  - योजनेचा तपशील कसा पहावा? मुख्यपृष्ठावरील कोणत्याही कार्डवर टॅप करून संपूर्ण तपशील पहा.]]></string>
+
+    <string name="phone_number">फोन नंबर</string>
+    <string name="email_address">ईमेल पत्ता</string>
+    <string name="change_password">पासवर्ड बदला</string>
+    <string name="update_account_password">खाते पासवर्ड अपडेट करा</string>
+    <string name="farmer_user">शेतकरी वापरकर्ता</string>
+    <string name="location_not_set">स्थान सेट केलेले नाही</string>
+
+    <!-- Custom Animated Loader (Marathi) -->
+    <string name="loader_title_schemes">शासकीय योजनांचा शोध</string>
+    <string name="loader_subtitle_schemes">तुमच्या भागातील सक्रिय कृषी योजना शोधल्या जात आहेत...</string>
+    <string name="loader_title_markets">स्थानिक मंड्यांशी जोडणी</string>
+    <string name="loader_subtitle_markets">भाजीपाला बाजार व ताज्या बाजारभावांची माहिती घेतली जात आहे...</string>
+    <string name="loader_title_loans">किसान कर्ज व क्रेडिट</string>
+    <string name="loader_subtitle_loans">कमी व्याजदराच्या कृषी कर्ज योजना आणल्या जात आहेत...</string>
+    <string name="loader_title_subsidies">कृषी अनुदानांचे विश्लेषण</string>
+    <string name="loader_subtitle_subsidies">सौर पंप, कृषी उपकरणे व खत अनुदानांची माहिती तपासली जात आहे...</string>
+    <string name="loader_title_agribridge">डॅशबोर्ड तयार केला जात आहे</string>
+    <string name="loader_subtitle_agribridge">AI द्वारे कृषी माहिती वैयक्तिकृत केली जात आहे...</string>
+
+</resources>

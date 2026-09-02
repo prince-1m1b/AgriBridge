@@ -71,10 +71,42 @@
         android:overScrollMode="never"
         android:padding="10dp"
         tools:listitem="@layout/item_chat"
-        app:layout_constraintBottom_toTopOf="@id/chatInputContainer"
+        app:layout_constraintBottom_toTopOf="@id/botResponseLoading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/chatHeader" />
+
+    <!-- Bot Response Loading Indicator -->
+    <LinearLayout
+        android:id="@+id/botResponseLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_bot_message"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/chatInputContainer"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ProgressBar
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/colorPrimary"
+            style="?android:attr/progressBarStyleSmall" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="AgriBridge is thinking..."
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+
+    </LinearLayout>
 
     <!-- Loading progress -->
     <ProgressBar
@@ -106,6 +138,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:orientation="horizontal"
+            android:visibility="gone"
             tools:listitem="ute"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
@@ -128,6 +161,7 @@
                 android:maxLines="3"
                 android:minLines="1"
                 android:paddingStart="12dp"
+                android:paddingEnd="12dp"
                 android:paddingVertical="10dp"
                 android:textSize="15sp" />
 
@@ -144,5 +178,29 @@
         </LinearLayout>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!-- Limit Status Overlay -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/limitOverlayContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/chatHeader"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <include
+            android:id="@+id/limitOverlay"
+            layout="@layout/dialog_limit_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.85"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

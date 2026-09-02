@@ -1,11 +1,18 @@
 package com.example.agribridge.ui.dashboard.fragments
 
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
+import android.animation.ValueAnimator
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,6 +40,10 @@ import com.example.agribridge.utils.getData
 import com.example.agribridge.utils.request
 import com.example.agribridge.utils.toast
 import com.example.agribridge.viewmodel.DiscoverViewModel
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
 
@@ -53,6 +64,69 @@ class HomeFragment : Fragment() {
     private val marketsList = ArrayList<MarketModel>()
     private val subsidiesList = ArrayList<SubsidyModel>()
 
+    // Custom Animated Loader State
+    private var loaderJob: Job? = null
+    private var pulseAnimator: ObjectAnimator? = null
+    private var currentStageIndex = 0
+
+    private data class LoaderStage(
+        val iconRes: Int,
+        val titleRes: Int,
+        val subtitleRes: Int,
+        val titleColor: Int,
+        val ringColor: Int,
+        val circleBgColor: Int,
+        val dotIndex: Int
+    )
+
+    private val loaderStages = listOf(
+        LoaderStage(
+            iconRes = R.drawable.ic_loader_schemes,
+            titleRes = R.string.loader_title_schemes,
+            subtitleRes = R.string.loader_subtitle_schemes,
+            titleColor = Color.parseColor("#1B5E20"),
+            ringColor = Color.parseColor("#81C784"),
+            circleBgColor = Color.parseColor("#E8F5E9"),
+            dotIndex = 0
+        ),
+        LoaderStage(
+            iconRes = R.drawable.ic_loader_market,
+            titleRes = R.string.loader_title_markets,
+            subtitleRes = R.string.loader_subtitle_markets,
+            titleColor = Color.parseColor("#BF360C"),
+            ringColor = Color.parseColor("#FFB74D"),
+            circleBgColor = Color.parseColor("#FBE9E7"),
+            dotIndex = 1
+        ),
+        LoaderStage(
+            iconRes = R.drawable.ic_loader_loan,
+            titleRes = R.string.loader_title_loans,
+            subtitleRes = R.string.loader_subtitle_loans,
+            titleColor = Color.parseColor("#0D47A1"),
+            ringColor = Color.parseColor("#90CAF9"),
+            circleBgColor = Color.parseColor("#E3F2FD"),
+            dotIndex = 2
+        ),
+        LoaderStage(
+            iconRes = R.drawable.ic_loader_subsidy,
+            titleRes = R.string.loader_title_subsidies,
+            subtitleRes = R.string.loader_subtitle_subsidies,
+            titleColor = Color.parseColor("#4A148C"),
+            ringColor = Color.parseColor("#CE93D8"),
+            circleBgColor = Color.parseColor("#F3E5F5"),
+            dotIndex = 3
+        ),
+        LoaderStage(
+            iconRes = R.drawable.ic_loader_agribridge,
+            titleRes = R.string.loader_title_agribridge,
+            subtitleRes = R.string.loader_subtitle_agribridge,
+            titleColor = Color.parseColor("#1B5E20"),
+            ringColor = Color.parseColor("#A5D6A7"),
+            circleBgColor = Color.parseColor("#E8F5E9"),
+            dotIndex = 4
+        )
+    )
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -63,14 +137,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val hasData = discoverViewModel.discoverData.value != null
-        if (!hasData) {
-            binding.scrollView.visibility = View.GONE
-            binding.progressBar.visibility = View.VISIBLE
-        } else {
-            binding.scrollView.visibility = View.VISIBLE
-            binding.progressBar.visibility = View.GONE
-        }
+        showCustomLoader()
 
         init()
         onClicks()
@@ -86,12 +153,10 @@ class HomeFragment : Fragment() {
         val language = when (langCode) {
             "hi" -> "hindi"
             "kn" -> "kannada"
+            "mr" -> "marathi"
             else -> "english"
         }
 
-        if (discoverViewModel.discoverData.value != null && discoverViewModel.currentLanguage == language) {
-            return
-        }
         discoverViewModel.fetchHomeDiscoverData(state, district, language)
     }
 
@@ -248,11 +313,9 @@ class HomeFragment : Fragment() {
     private fun setObserver() {
         discoverViewModel.loading.observe(viewLifecycleOwner) { isLoading ->
             if (isLoading) {
-                binding.progressBar.visibility = View.VISIBLE
-                binding.scrollView.visibility = View.GONE
+                showCustomLoader()
             } else {
-                binding.progressBar.visibility = View.GONE
-                binding.scrollView.visibility = View.VISIBLE
+                hideCustomLoader()
             }
         }
 
@@ -316,6 +379,118 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun showCustomLoader() {
+        if (_binding == null) return
+        binding.layoutCustomLoader.visibility = View.VISIBLE
+        binding.layoutCustomLoader.alpha = 1f
+        binding.scrollView.visibility = View.GONE
+
+        // Start breathing pulse ring animation
+        if (pulseAnimator == null) {
+            val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, 1.0f, 1.18f)
+            val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1.0f, 1.18f)
+            val alpha = PropertyValuesHolder.ofFloat(View.ALPHA, 0.35f, 1.0f)
+            pulseAnimator = ObjectAnimator.ofPropertyValuesHolder(
+                binding.viewLoaderPulseRing, scaleX, scaleY, alpha
+            ).apply {
+                duration = 900L
+                repeatMode = ValueAnimator.REVERSE
+                repeatCount = ValueAnimator.INFINITE
+                interpolator = AccelerateDecelerateInterpolator()
+            }
+        }
+        pulseAnimator?.start()
+
+        // Start logo and message stage cycle
+        loaderJob?.cancel()
+        currentStageIndex = 0
+        applyLoaderStage(loaderStages[currentStageIndex], animate = false)
+
+        loaderJob = viewLifecycleOwner.lifecycleScope.launch {
+            while (isActive) {
+                delay(1300L)
+                currentStageIndex = (currentStageIndex + 1) % loaderStages.size
+                applyLoaderStage(loaderStages[currentStageIndex], animate = true)
+            }
+        }
+    }
+
+    private fun applyLoaderStage(stage: LoaderStage, animate: Boolean) {
+        if (_binding == null) return
+
+        if (!animate) {
+            binding.ivLoaderLogo.setImageResource(stage.iconRes)
+            binding.tvLoaderTitle.setText(stage.titleRes)
+            binding.tvLoaderTitle.setTextColor(stage.titleColor)
+            binding.tvLoaderSubtitle.setText(stage.subtitleRes)
+            binding.viewLoaderPulseRing.backgroundTintList = ColorStateList.valueOf(stage.ringColor)
+            binding.layoutLoaderIconCircle.backgroundTintList = ColorStateList.valueOf(stage.circleBgColor)
+            updateLoaderDots(stage.dotIndex, stage.titleColor)
+            return
+        }
+
+        // Smooth fade and scale transition between agricultural logos
+        binding.ivLoaderLogo.animate()
+            .alpha(0f)
+            .scaleX(0.7f)
+            .scaleY(0.7f)
+            .setDuration(160L)
+            .withEndAction {
+                if (_binding == null) return@withEndAction
+                binding.ivLoaderLogo.setImageResource(stage.iconRes)
+                binding.tvLoaderTitle.setText(stage.titleRes)
+                binding.tvLoaderTitle.setTextColor(stage.titleColor)
+                binding.tvLoaderSubtitle.setText(stage.subtitleRes)
+                binding.viewLoaderPulseRing.backgroundTintList = ColorStateList.valueOf(stage.ringColor)
+                binding.layoutLoaderIconCircle.backgroundTintList = ColorStateList.valueOf(stage.circleBgColor)
+                updateLoaderDots(stage.dotIndex, stage.titleColor)
+
+                binding.ivLoaderLogo.animate()
+                    .alpha(1f)
+                    .scaleX(1.0f)
+                    .scaleY(1.0f)
+                    .setDuration(220L)
+                    .setInterpolator(AccelerateDecelerateInterpolator())
+                    .start()
+            }
+            .start()
+    }
+
+    private fun updateLoaderDots(activeIndex: Int, activeColor: Int) {
+        if (_binding == null) return
+        val inactiveColor = ColorStateList.valueOf(Color.parseColor("#E0E0E0"))
+        val activeColorState = ColorStateList.valueOf(activeColor)
+
+        binding.dot0.backgroundTintList = if (activeIndex == 0) activeColorState else inactiveColor
+        binding.dot1.backgroundTintList = if (activeIndex == 1) activeColorState else inactiveColor
+        binding.dot2.backgroundTintList = if (activeIndex == 2) activeColorState else inactiveColor
+        binding.dot3.backgroundTintList = if (activeIndex == 3) activeColorState else inactiveColor
+        binding.dot4.backgroundTintList = if (activeIndex == 4) activeColorState else inactiveColor
+    }
+
+    private fun hideCustomLoader() {
+        loaderJob?.cancel()
+        loaderJob = null
+        pulseAnimator?.cancel()
+
+        if (_binding == null) return
+
+        binding.layoutCustomLoader.animate()
+            .alpha(0f)
+            .setDuration(250L)
+            .withEndAction {
+                if (_binding == null) return@withEndAction
+                binding.layoutCustomLoader.visibility = View.GONE
+                binding.scrollView.visibility = View.VISIBLE
+                binding.scrollView.alpha = 0f
+                binding.scrollView.animate()
+                    .alpha(1f)
+                    .setDuration(250L)
+                    .start()
+            }
+            .start()
+    }
+
     private fun clearAllDataAndShowEmptyStates() {
         schemesList.clear()
         (binding.rvSchemes.adapter as? SchemeAdapter)?.submitList(emptyList())
@@ -346,6 +521,10 @@ class HomeFragment : Fragment() {
     }
 
     override fun onDestroyView() {
+        loaderJob?.cancel()
+        loaderJob = null
+        pulseAnimator?.cancel()
+        pulseAnimator = null
         super.onDestroyView()
         _binding = null
     }

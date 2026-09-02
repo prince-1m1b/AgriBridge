@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Basket base -->
+    <path
+        android:fillColor="#E65100"
+        android:pathData="M19,10H5l1.5,10h11L19,10z" />
+    <!-- Basket rim -->
+    <path
+        android:fillColor="#BF360C"
+        android:pathData="M3,9h18v2H3z" />
+    <!-- Fresh vegetables in basket (tomato, carrot, leaves) -->
+    <path
+        android:fillColor="#D32F2F"
+        android:pathData="M9,9c-1.5,-2.5 0,-5 2,-5 1.5,0 2.5,1.5 2.5,3.5L9,9z" />
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M13,6c1,-2 3,-3 5,-2 -0.5,2 -2,4 -3.5,4L13,6z" />
+    <!-- Basket weave lines -->
+    <path
+        android:fillColor="#FFB74D"
+        android:pathData="M8,13h8v1H8zM7.5,16h9v1H7.5z" />
+</vector>

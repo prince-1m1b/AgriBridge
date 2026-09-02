@@ -533,12 +533,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="10dp"
                 android:gravity="center"
                 android:text="@string/app_version"
                 android:textColor="@color/green_version_text"
                 android:textSize="11sp"
                 tools:ignore="HardcodedText" />
+
+            <!-- Credit text -->
+            <TextView
+                android:id="@+id/tvDeveloperCredit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:text="Concept and Design by Rayan Upadhyay"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp"
+                android:textStyle="italic" />
 
         </LinearLayout>
 

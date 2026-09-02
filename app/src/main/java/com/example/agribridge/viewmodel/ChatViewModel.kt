@@ -86,4 +86,15 @@ class ChatViewModel(private val repository: ChatRepository) : ViewModel() {
     fun clearClearChatResult() {
         _clearChatResult.value = null
     }
+    private val _limitStatusResult = MutableLiveData<ApiResponse?>()
+    val limitStatusResult: LiveData<ApiResponse?> = _limitStatusResult
+
+    fun getChatLimitStatus() {
+        _loading.value = true
+        viewModelScope.launch {
+            val response = repository.getChatLimitStatus()
+            _limitStatusResult.value = response
+            _loading.value = false
+        }
+    }
 }

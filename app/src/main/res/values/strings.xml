@@ -46,6 +46,7 @@
     <string name="english">English</string>
     <string name="kannada">Kannada</string>
     <string name="hindi">Hindi</string>
+    <string name="marathi">Marathi</string>
 
     <string name="registration_successful">Registration Successful</string>
     <string name="account_created_msg">Your account has been created successfully. Please login to continue.</string>
@@ -114,7 +115,7 @@
     <!-- Profile Fragment Detail Descriptions -->
     <string name="terms_conditions_content"><![CDATA[Welcome to AgriBridge! By accessing and using our application, you agree to comply with and be bound by the following terms of use:\n\n1. Acceptance of Terms: Your access to and use of AgriBridge is subject exclusively to these Terms and Conditions.\n2. Content: The information provided on this app is for general agricultural assistance. We strive to maintain accuracy, but we do not guarantee completeness.\n3. User Account: You are responsible for keeping your login credentials confidential.\n4. Data Charges: Standard internet data charges apply while using network-based features.]]></string>
     <string name="privacy_policy_content"><![CDATA[Your privacy is important to us. AgriBridge\'s Privacy Policy describes how we collect, use, and process your information:\n\n1. Information Collection: We collect registration details (name, phone, state, district) to tailor agricultural data specific to your region.\n2. Chat Logs: Conversation logs with AgriBridge chatbot are processed to deliver accurate AI responses and improve support features.\n3. Data Protection: We implement secure storage mechanisms to ensure your credentials and personal info remain protected.\n4. Third-Party Services: External web links (e.g. government scheme portals) operate under their own independent policies.]]></string>
-    <string name="help_support_content"><![CDATA[Need assistance? We are here to support your farming needs:\n\n• AgriBridge Support Team:\n  Email: support@agribridge.org\n  Helpline: 1800-300-4560 (Toll-Free)\n\n• Common FAQs:\n  - How to select language? Click \'Language\' on the Profile tab and choose English, Hindi, or Kannada.\n  - How to view scheme details? Tap on any dashboard card item on the Home screen to view a detailed popup card details.]]></string>
+    <string name="help_support_content"><![CDATA[Need assistance? We are here to support your farming needs:\n\n• AgriBridge Support Team:\n  Email: support@agribridge.org\n  Helpline: 1800-300-4560 (Toll-Free)\n\n• Common FAQs:\n  - How to select language? Click \'Language\' on the Profile tab and choose English, Hindi, Kannada, or Marathi.\n  - How to view scheme details? Tap on any dashboard card item on the Home screen to view a detailed popup card details.]]></string>
 
     <string name="phone_number">Phone Number</string>
     <string name="email_address">Email Address</string>
@@ -122,5 +123,17 @@
     <string name="update_account_password">Update account password</string>
     <string name="farmer_user">Farmer User</string>
     <string name="location_not_set">Location not set</string>
+
+    <!-- Custom Animated Loader -->
+    <string name="loader_title_schemes">Discovering Government Schemes</string>
+    <string name="loader_subtitle_schemes">Finding active agricultural benefits for your region...</string>
+    <string name="loader_title_markets">Connecting Local Mandis</string>
+    <string name="loader_subtitle_markets">Checking vegetable markets &amp; trading prices...</string>
+    <string name="loader_title_loans">Tailoring Kisan Loans &amp; Credit</string>
+    <string name="loader_subtitle_loans">Fetching low-interest farming loan programs...</string>
+    <string name="loader_title_subsidies">Scanning Farm Subsidies</string>
+    <string name="loader_subtitle_subsidies">Checking solar pumps &amp; machinery subsidies...</string>
+    <string name="loader_title_agribridge">Cultivating Your Dashboard</string>
+    <string name="loader_subtitle_agribridge">Personalizing agricultural intelligence with AI...</string>
 
 </resources>

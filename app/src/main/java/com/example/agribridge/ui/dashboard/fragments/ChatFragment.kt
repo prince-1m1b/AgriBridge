@@ -56,6 +56,9 @@ class ChatFragment : Fragment() {
     private var currentConversationId: String? = null
     private var conversationSessions: List<ConversationItem> = emptyList()
     private var isManualSessionsRequest = false
+    private var isSendingMessage = false
+    private var isLimitReached = false
+    private var countDownTimer: android.os.CountDownTimer? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentChatBinding.inflate(inflater, container, false)
@@ -72,6 +75,9 @@ class ChatFragment : Fragment() {
 
         // Fetch user's conversation logs
         chatViewModel.listConversations()
+        
+        // Fetch daily chat limit status
+        chatViewModel.getChatLimitStatus()
     }
 
     private fun init() {
@@ -116,6 +122,10 @@ class ChatFragment : Fragment() {
             }
 
             ivSend.setOnClickListener {
+                if (isLimitReached) {
+                    chatViewModel.getChatLimitStatus() // Re-check limit
+                    return@setOnClickListener
+                }
                 val text = etChat.text?.toString()?.trim().orEmpty()
                 if (text.isEmpty()) return@setOnClickListener
                 etChat.text?.clear()
@@ -167,6 +177,10 @@ class ChatFragment : Fragment() {
         binding.rvSuggestions.visibility = View.GONE
     }
 
+    private fun showSuggestions() {
+        binding.rvSuggestions.visibility = View.VISIBLE
+    }
+
     private fun sendUserMessage(text: String) {
         hideSuggestions()
         addMessage(ChatMessage(message = text, time = getCurrentTime(), type = MessageType.USER))
@@ -175,9 +189,11 @@ class ChatFragment : Fragment() {
         val language = when (langCode) {
             "hi" -> "hindi"
             "kn" -> "kannada"
+            "mr" -> "marathi"
             else -> "english"
         }
 
+        isSendingMessage = true
         chatViewModel.sendMessage(text, currentConversationId, language)
     }
 
@@ -209,10 +225,23 @@ class ChatFragment : Fragment() {
 
     private fun setObservers() {
         chatViewModel.loading.observe(viewLifecycleOwner) { isLoading ->
-            binding.chatLoading.visibility = if (isLoading) View.VISIBLE else View.GONE
+            if (isSendingMessage) {
+                binding.chatLoading.visibility = View.GONE
+                binding.botResponseLoading.visibility = if (isLoading) View.VISIBLE else View.GONE
+                if (!isLoading) {
+                    isSendingMessage = false
+                } else {
+                    scrollToBottom()
+                }
+            } else {
+                binding.chatLoading.visibility = if (isLoading) View.VISIBLE else View.GONE
+                binding.botResponseLoading.visibility = View.GONE
+            }
         }
 
         chatViewModel.sendMessageResult.observe(viewLifecycleOwner) { apiResponse ->
+            isSendingMessage = false
+            binding.botResponseLoading.visibility = View.GONE
             if (apiResponse == null) return@observe
             if (apiResponse.statusCode == 200 || apiResponse.type?.equals("success", ignoreCase = true) == true) {
                 val dataObj = getData(apiResponse.data, ChatResponseData::class.java)
@@ -241,6 +270,7 @@ class ChatFragment : Fragment() {
                     chatMessages.clear()
                     chatAdapter.notifyDataSetChanged()
                     requireContext().toast("New conversation session started")
+                    showSuggestions()
                 }
             } else {
                 requireContext().toast(apiResponse.message ?: "Failed to create conversation session")
@@ -267,6 +297,7 @@ class ChatFragment : Fragment() {
                         time = getCurrentTime(),
                         type = MessageType.BOT
                     ))
+                    showSuggestions()
                 }
 
                 // If user triggered list fetch manually via ivSessions button, show dialog
@@ -308,12 +339,97 @@ class ChatFragment : Fragment() {
                 }
                 chatAdapter.notifyDataSetChanged()
                 scrollToBottom()
+
+                if (items.isEmpty()) {
+                    showSuggestions()
+                } else {
+                    hideSuggestions()
+                }
+            }
+        }
+
+        chatViewModel.limitStatusResult.observe(viewLifecycleOwner) { apiResponse ->
+            if (apiResponse == null) return@observe
+            if (apiResponse.statusCode == 200 || apiResponse.type?.equals("success", ignoreCase = true) == true) {
+                val dataObj = getData(apiResponse.data, LimitStatusResponseData::class.java)
+                dataObj?.let {
+                    isLimitReached = it.limitReached
+                    if (it.limitReached) {
+                        // Disable chat UI
+                        binding.etChat.isEnabled = false
+                        binding.etChat.hint = "Daily limit reached"
+                        hideSuggestions()
+                        
+                        // Hide chat UI and toolbar icons
+                        binding.rvChat.visibility = View.GONE
+                        binding.chatInputContainer.visibility = View.GONE
+                        binding.ivSessions.visibility = View.GONE
+                        binding.ivNewChat.visibility = View.GONE
+                        
+                        // Show overlay
+                        binding.limitOverlayContainer.visibility = View.VISIBLE
+                        
+                        // Setup timer
+                        startLimitTimer(it.secondsUntilReset)
+                        
+                        // Setup dynamic limit message
+                        binding.limitOverlay.tvMessage.text = "You have reached your daily limit of ${it.dailyLimit} questions. You can ask more questions after the timer resets."
+                        
+                        // Reset refresh button state (in case it was loading)
+                        binding.limitOverlay.btnRefresh.text = "Refresh"
+                        binding.limitOverlay.btnRefresh.isEnabled = true
+                        
+                        // Setup refresh button
+                        binding.limitOverlay.btnRefresh.setOnClickListener {
+                            binding.limitOverlay.btnRefresh.text = "Refreshing..."
+                            binding.limitOverlay.btnRefresh.isEnabled = false
+                            chatViewModel.getChatLimitStatus()
+                        }
+                    } else {
+                        // Hide overlay
+                        binding.limitOverlayContainer.visibility = View.GONE
+                        countDownTimer?.cancel()
+
+                        // Show chat UI and toolbar icons
+                        binding.rvChat.visibility = View.VISIBLE
+                        binding.chatInputContainer.visibility = View.VISIBLE
+                        binding.ivSessions.visibility = View.VISIBLE
+                        binding.ivNewChat.visibility = View.VISIBLE
+
+                        // Enable chat input
+                        binding.etChat.isEnabled = true
+                        binding.etChat.hint = getString(com.example.agribridge.R.string.ask_anything)
+                        if (chatMessages.isEmpty()) {
+                            showSuggestions()
+                        }
+                    }
+                }
             }
         }
     }
 
+    private fun startLimitTimer(secondsUntilReset: Long) {
+        countDownTimer?.cancel()
+        countDownTimer = object : android.os.CountDownTimer(secondsUntilReset * 1000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                val seconds = millisUntilFinished / 1000
+                val h = seconds / 3600
+                val m = (seconds % 3600) / 60
+                val s = seconds % 60
+                
+                binding.limitOverlay.tvCountdown.text = String.format("%02d:%02d:%02d", h, m, s)
+            }
+
+            override fun onFinish() {
+                binding.limitOverlay.tvCountdown.text = "00:00:00"
+                binding.limitOverlay.btnRefresh.text = "Start Chatting"
+            }
+        }.start()
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
+        countDownTimer?.cancel()
         _binding = null
     }
 }

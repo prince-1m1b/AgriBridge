@@ -58,6 +58,11 @@ class LanguageSelectionDialogFragment : DialogFragment() {
             updateUI()
         }
 
+        binding.cardMarathi.setOnClickListener {
+            selectedLanguageCode = "mr"
+            updateUI()
+        }
+
         binding.btnOk.setOnClickListener {
             LanguageManager.setLanguage(requireContext(), selectedLanguageCode)
             onOkClickListener?.invoke(selectedLanguageCode)
@@ -70,6 +75,7 @@ class LanguageSelectionDialogFragment : DialogFragment() {
             rbEnglish.isChecked = (selectedLanguageCode == "en")
             rbHindi.isChecked = (selectedLanguageCode == "hi")
             rbKannada.isChecked = (selectedLanguageCode == "kn")
+            rbMarathi.isChecked = (selectedLanguageCode == "mr")
 
             val activeColor = ContextCompat.getColor(requireContext(), R.color.green_primary)
             val inactiveColor = ContextCompat.getColor(requireContext(), R.color.green_card_stroke)
@@ -77,11 +83,13 @@ class LanguageSelectionDialogFragment : DialogFragment() {
             cardEnglish.strokeColor = if (selectedLanguageCode == "en") activeColor else inactiveColor
             cardHindi.strokeColor = if (selectedLanguageCode == "hi") activeColor else inactiveColor
             cardKannada.strokeColor = if (selectedLanguageCode == "kn") activeColor else inactiveColor
+            cardMarathi.strokeColor = if (selectedLanguageCode == "mr") activeColor else inactiveColor
             
             // Adjust card elevations for selected state
             cardEnglish.cardElevation = if (selectedLanguageCode == "en") 6f else 1f
             cardHindi.cardElevation = if (selectedLanguageCode == "hi") 6f else 1f
             cardKannada.cardElevation = if (selectedLanguageCode == "kn") 6f else 1f
+            cardMarathi.cardElevation = if (selectedLanguageCode == "mr") 6f else 1f
         }
     }
 

@@ -289,6 +289,7 @@ data class MarketModel(
         }
 
     /**
+     * 31 - 2 ==> WFH  |   ==> 31th Leave
      * Resolves the category accent color token.
      * "Retail & Wholesale" → orange, "APMC" → teal, "e-Market" → blue
      */

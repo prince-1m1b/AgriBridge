@@ -1,6 +1,8 @@
 package com.example.agribridge.api
 
 import android.content.Context
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.example.agribridge.BuildConfig
 import com.example.agribridge.App.Companion.gson
 import okhttp3.OkHttpClient
@@ -9,6 +11,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
+@RequiresApi(Build.VERSION_CODES.GINGERBREAD)
 class ApiClient(context: Context) {
 
     private val loggingInterceptor = if (BuildConfig.DEBUG) {
@@ -30,13 +33,9 @@ class ApiClient(context: Context) {
     }
 
     val retrofit: Retrofit by lazy {
-        val rawUrl = "http://10.16.75.112:6000/api"
-        val baseUrl = if (rawUrl.endsWith("/")) rawUrl else "$rawUrl/"
-
-        // "http://10.16.75.112:6000/api/"
         Retrofit
             .Builder()
-            .baseUrl("http://192.168.1.30:6000/api/")
+            .baseUrl("http://192.168.1.11:8000/api/")
             .client(httpClient)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()

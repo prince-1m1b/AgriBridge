@@ -15,6 +15,9 @@ import com.example.agribridge.databinding.DialogSelectLocationBinding
 import com.example.agribridge.model.DistrictsResponseData
 import com.example.agribridge.model.ProfileUpdateResponseData
 import com.example.agribridge.model.StatesResponseData
+import com.example.agribridge.utils.Constant.UserDetails
+import com.example.agribridge.utils.Preference
+import com.example.agribridge.utils.getData
 import com.example.agribridge.utils.request
 import com.example.agribridge.utils.toast
 import com.example.agribridge.viewmodel.ProfileViewModel
@@ -50,6 +53,38 @@ class SelectLocationDialogFragment : DialogFragment() {
 
         binding.ivClose.setOnClickListener { dismiss() }
 
+        // Read saved location from arguments or user preferences
+        val preference = Preference(requireContext())
+        val prefState = preference.getStringPreferenceForUser(UserDetails.USER_STATE)
+        val prefDistrict = preference.getStringPreferenceForUser(UserDetails.USER_DISTRICT)
+
+        val argState = arguments?.getString(ARG_STATE)
+        val argDistrict = arguments?.getString(ARG_DISTRICT)
+
+        val stateToPreselect = when {
+            !argState.isNullOrEmpty() -> argState
+            prefState.isNotEmpty() -> prefState
+            else -> ""
+        }
+
+        val districtToPreselect = when {
+            !argDistrict.isNullOrEmpty() -> argDistrict
+            prefDistrict.isNotEmpty() -> prefDistrict
+            else -> ""
+        }
+
+        if (stateToPreselect.isNotEmpty()) {
+            selectedState = stateToPreselect
+            binding.actvState.setText(stateToPreselect, false)
+            // Immediately fetch districts for the preselected state so the district dropdown is ready
+            profileViewModel.getDistricts(stateToPreselect)
+        }
+
+        if (districtToPreselect.isNotEmpty()) {
+            selectedDistrict = districtToPreselect
+            binding.actvDistrict.setText(districtToPreselect, false)
+        }
+
         setObservers()
 
         // Fetch states on launch
@@ -77,17 +112,26 @@ class SelectLocationDialogFragment : DialogFragment() {
         profileViewModel.statesResult.observe(viewLifecycleOwner) { apiResponse ->
             if (apiResponse == null) return@observe
             if (apiResponse.statusCode == 200 || apiResponse.type?.equals("success", ignoreCase = true) == true) {
-                val dataObj = com.example.agribridge.utils.getData(apiResponse.data, StatesResponseData::class.java)
+                val dataObj = getData(apiResponse.data, StatesResponseData::class.java)
                 val statesList = dataObj?.states ?: emptyList()
 
                 val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, statesList)
                 binding.actvState.setAdapter(adapter)
+
+                // Match and preserve the preselected state in the dropdown
+                if (selectedState.isNotEmpty()) {
+                    val matchingState = statesList.find { it.equals(selectedState, ignoreCase = true) } ?: selectedState
+                    selectedState = matchingState
+                    binding.actvState.setText(matchingState, false)
+                }
+
                 binding.actvState.setOnItemClickListener { _, _, position, _ ->
                     val chosenState = adapter.getItem(position) ?: ""
                     if (chosenState != selectedState) {
                         selectedState = chosenState
                         selectedDistrict = ""
                         binding.actvDistrict.setText("", false)
+                        binding.actvDistrict.setAdapter(null)
                         profileViewModel.getDistricts(chosenState)
                     }
                 }
@@ -100,11 +144,19 @@ class SelectLocationDialogFragment : DialogFragment() {
         profileViewModel.districtsResult.observe(viewLifecycleOwner) { apiResponse ->
             if (apiResponse == null) return@observe
             if (apiResponse.statusCode == 200 || apiResponse.type?.equals("success", ignoreCase = true) == true) {
-                val dataObj = com.example.agribridge.utils.getData(apiResponse.data, DistrictsResponseData::class.java)
+                val dataObj = getData(apiResponse.data, DistrictsResponseData::class.java)
                 val districtsList = dataObj?.districts ?: emptyList()
 
                 val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, districtsList)
                 binding.actvDistrict.setAdapter(adapter)
+
+                // Match and preserve the preselected district in the dropdown
+                if (selectedDistrict.isNotEmpty()) {
+                    val matchingDistrict = districtsList.find { it.equals(selectedDistrict, ignoreCase = true) } ?: selectedDistrict
+                    selectedDistrict = matchingDistrict
+                    binding.actvDistrict.setText(matchingDistrict, false)
+                }
+
                 binding.actvDistrict.setOnItemClickListener { _, _, position, _ ->
                     selectedDistrict = adapter.getItem(position) ?: ""
                 }
@@ -117,18 +169,18 @@ class SelectLocationDialogFragment : DialogFragment() {
         profileViewModel.profileUpdateResult.observe(viewLifecycleOwner) { apiResponse ->
             if (apiResponse == null) return@observe
             if (apiResponse.statusCode == 200 || apiResponse.type?.equals("success", ignoreCase = true) == true) {
-                val dataObj = com.example.agribridge.utils.getData(apiResponse.data, ProfileUpdateResponseData::class.java)
+                val dataObj = getData(apiResponse.data, ProfileUpdateResponseData::class.java)
                 dataObj?.let {
                     storeUpdatedUserDetails(it.toUserData())
                 }
                 
                 // Explicitly save the selected state & district into preference in case they are not returned in the API payload!
-                val preference = com.example.agribridge.utils.Preference(requireContext())
+                val preference = Preference(requireContext())
                 if (selectedState.isNotEmpty()) {
-                    preference.setStringPreferenceForUser(com.example.agribridge.utils.Constant.UserDetails.USER_STATE, selectedState)
+                    preference.setStringPreferenceForUser(UserDetails.USER_STATE, selectedState)
                 }
                 if (selectedDistrict.isNotEmpty()) {
-                    preference.setStringPreferenceForUser(com.example.agribridge.utils.Constant.UserDetails.USER_DISTRICT, selectedDistrict)
+                    preference.setStringPreferenceForUser(UserDetails.USER_DISTRICT, selectedDistrict)
                 }
 
                 requireContext().toast(apiResponse.message ?: "Location updated successfully!")
@@ -142,14 +194,14 @@ class SelectLocationDialogFragment : DialogFragment() {
     }
 
     private fun storeUpdatedUserDetails(user: com.example.agribridge.model.UserData) {
-        val preference = com.example.agribridge.utils.Preference(requireContext())
-        preference.setStringPreferenceForUser(com.example.agribridge.utils.Constant.UserDetails.USER_ID, user._id)
-        preference.setStringPreferenceForUser(com.example.agribridge.utils.Constant.UserDetails.USER_FIRST_NAME, user.first_name)
-        preference.setStringPreferenceForUser(com.example.agribridge.utils.Constant.UserDetails.USER_LAST_NAME, user.last_name)
-        preference.setStringPreferenceForUser(com.example.agribridge.utils.Constant.UserDetails.USER_EMAIL, user.email)
-        preference.setStringPreferenceForUser(com.example.agribridge.utils.Constant.UserDetails.USER_PHONE_NUMBER, user.phone_number)
-        preference.setStringPreferenceForUser(com.example.agribridge.utils.Constant.UserDetails.USER_STATE, user.state)
-        preference.setStringPreferenceForUser(com.example.agribridge.utils.Constant.UserDetails.USER_DISTRICT, user.district)
+        val preference = Preference(requireContext())
+        preference.setStringPreferenceForUser(UserDetails.USER_ID, user._id)
+        preference.setStringPreferenceForUser(UserDetails.USER_FIRST_NAME, user.first_name)
+        preference.setStringPreferenceForUser(UserDetails.USER_LAST_NAME, user.last_name)
+        preference.setStringPreferenceForUser(UserDetails.USER_EMAIL, user.email)
+        preference.setStringPreferenceForUser(UserDetails.USER_PHONE_NUMBER, user.phone_number)
+        preference.setStringPreferenceForUser(UserDetails.USER_STATE, user.state)
+        preference.setStringPreferenceForUser(UserDetails.USER_DISTRICT, user.district)
     }
 
     override fun onStart() {
@@ -171,11 +223,25 @@ class SelectLocationDialogFragment : DialogFragment() {
 
     companion object {
         const val TAG = "SelectLocationDialogFragment"
+        private const val ARG_STATE = "arg_state"
+        private const val ARG_DISTRICT = "arg_district"
 
-        fun newInstance(onLocationUpdated: () -> Unit): SelectLocationDialogFragment {
+        fun newInstance(
+            initialState: String? = null,
+            initialDistrict: String? = null,
+            onLocationUpdated: () -> Unit
+        ): SelectLocationDialogFragment {
             return SelectLocationDialogFragment().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_STATE, initialState)
+                    putString(ARG_DISTRICT, initialDistrict)
+                }
                 this.onLocationUpdated = onLocationUpdated
             }
+        }
+
+        fun newInstance(onLocationUpdated: () -> Unit): SelectLocationDialogFragment {
+            return newInstance(null, null, onLocationUpdated)
         }
     }
 }

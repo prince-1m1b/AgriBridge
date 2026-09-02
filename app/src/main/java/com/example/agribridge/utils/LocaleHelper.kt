@@ -10,6 +10,11 @@ object LocaleHelper {
     }
 
     fun getLocale(): String {
-        return AppCompatDelegate.getApplicationLocales().toLanguageTags()
+        val locales = AppCompatDelegate.getApplicationLocales()
+        return if (!locales.isEmpty) {
+            locales.get(0)?.language ?: "en"
+        } else {
+            "en"
+        }
     }
 }

@@ -57,6 +57,7 @@ object LanguageManager {
     val supportedLanguages = listOf(
         SupportedLanguage("en", "English"),
         SupportedLanguage("hi", "Hindi"),
-        SupportedLanguage("kn", "Kannada")
+        SupportedLanguage("kn", "Kannada"),
+        SupportedLanguage("mr", "Marathi")
     )
 }

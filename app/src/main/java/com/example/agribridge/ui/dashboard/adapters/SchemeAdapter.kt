@@ -61,6 +61,7 @@ class SchemeAdapter(
 
             // ── Click handlers ────────────────────────────────────────────────
             root.setOnClickListener { onItemClick(item) }
+            btnViewDetails.setOnClickListener { onItemClick(item) }
 
             tvOfficialLink.setOnClickListener {
                 item.officialUrl?.let { url ->

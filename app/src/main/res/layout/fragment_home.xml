@@ -319,16 +319,167 @@
 
             </LinearLayout>
 
+            <!-- Credit text -->
+            <TextView
+                android:id="@+id/tvDeveloperCredit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="Concept and Design by Rayan Upadhyay"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp"
+                android:textStyle="italic" />
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:indeterminateTint="@color/green_primary"
-        android:visibility="gone" />
+    <!-- Custom Animated Agricultural Loader -->
+    <LinearLayout
+        android:id="@+id/layoutCustomLoader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_green"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <!-- Outer Elevated Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_custom_loader_card"
+            android:elevation="6dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="36dp">
+
+            <!-- Logo / Icon Container with Pulsing Rings -->
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp">
+
+                <!-- Animated Outer Pulse Ring -->
+                <View
+                    android:id="@+id/viewLoaderPulseRing"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/bg_loader_pulse_ring" />
+
+                <!-- Inner Icon Container Circle -->
+                <FrameLayout
+                    android:id="@+id/layoutLoaderIconCircle"
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_loader_icon_circle">
+
+                    <ImageView
+                        android:id="@+id/ivLoaderLogo"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_loader_schemes" />
+
+                </FrameLayout>
+
+            </FrameLayout>
+
+            <!-- Dynamic Category Title -->
+            <TextView
+                android:id="@+id/tvLoaderTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/loader_title_schemes"
+                android:textColor="@color/green_dark"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <!-- Dynamic Subtitle -->
+            <TextView
+                android:id="@+id/tvLoaderSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:text="@string/loader_subtitle_schemes"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp" />
+
+            <!-- Indeterminate Progress Indicator -->
+            <ProgressBar
+                android:id="@+id/loaderProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="160dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="22dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/green_primary" />
+
+            <!-- Animated Stage Indicator Dots -->
+            <LinearLayout
+                android:id="@+id/layoutLoaderDots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/dot0"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:background="@drawable/shape_dot"
+                    android:backgroundTint="@color/green_primary" />
+
+                <View
+                    android:id="@+id/dot1"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:background="@drawable/shape_dot"
+                    android:backgroundTint="@color/light_gray" />
+
+                <View
+                    android:id="@+id/dot2"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:background="@drawable/shape_dot"
+                    android:backgroundTint="@color/light_gray" />
+
+                <View
+                    android:id="@+id/dot3"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:background="@drawable/shape_dot"
+                    android:backgroundTint="@color/light_gray" />
+
+                <View
+                    android:id="@+id/dot4"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:background="@drawable/shape_dot"
+                    android:backgroundTint="@color/light_gray" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </FrameLayout>

@@ -21,10 +21,6 @@ class AuthenticationInterceptor(private val context: Context) : Interceptor {
             chain.request().newBuilder().header(AUTHORIZATION, token).header(LOGIN_CODE, "").build()
         val response = chain.proceed(originalRequest)
 
-        if (response.code == 401) {
-            (context as Activity).logout()
-        }
-
         return response
     }
 

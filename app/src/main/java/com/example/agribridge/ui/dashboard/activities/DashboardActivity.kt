@@ -18,12 +18,28 @@ import com.example.agribridge.utils.applySystemBarsPadding2
 import com.example.agribridge.utils.prefManager
 import com.example.agribridge.utils.viewGone
 import com.example.agribridge.utils.viewVisible
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewmodel.initializer
+import androidx.lifecycle.viewmodel.viewModelFactory
+import com.example.agribridge.api.listener.DiscoverApiRequest
+import com.example.agribridge.api.repository.DiscoverRepository
+import com.example.agribridge.utils.request
+import com.example.agribridge.viewmodel.DiscoverViewModel
 
 class DashboardActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDashboardBinding
     private lateinit var currentFragment: Fragment
     private var queryString: String = ""
+
+    private val discoverViewModel: DiscoverViewModel by lazy {
+        val factory = viewModelFactory {
+            initializer {
+                DiscoverViewModel(DiscoverRepository(request(DiscoverApiRequest::class.java)))
+            }
+        }
+        ViewModelProvider(this, factory)[DiscoverViewModel::class.java]
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +55,12 @@ class DashboardActivity : AppCompatActivity() {
         init()
         onClick()
         addOnBackPressedDispatcher { handleBackPress() }
+
+        discoverViewModel.loading.observe(this) { isLoading ->
+            binding.llHome.isEnabled = !isLoading
+            binding.llChat.isEnabled = !isLoading
+            binding.llProfile.isEnabled = !isLoading
+        }
     }
 
     // ─── Init ─────────────────────────────────────────────────────────────────
@@ -173,6 +195,10 @@ class DashboardActivity : AppCompatActivity() {
             viewGone(tvHome)
             viewGone(tvChat)
             viewGone(tvProfile)
+
+            tvHome.text = "Home"
+            tvChat.text = "Chat"
+            tvProfile.text = "Profile"
 
             // Highlight the selected tab
             when (selected) {

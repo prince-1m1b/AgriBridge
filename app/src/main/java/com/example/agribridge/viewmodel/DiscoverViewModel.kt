@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.agribridge.api.ApiResponse
 import com.example.agribridge.api.repository.DiscoverRepository
-import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import kotlinx.coroutines.launch
 
@@ -19,21 +18,26 @@ class DiscoverViewModel(private val repository: DiscoverRepository) : ViewModel(
     val loading: LiveData<Boolean> = _loading
 
     var currentLanguage: String? = null
+    var currentState: String? = null
+    var currentDistrict: String? = null
 
-    fun fetchHomeDiscoverData(state: String, district: String, language: String) {
+    fun fetchHomeDiscoverData(state: String, district: String, language: String, forceRefresh: Boolean = false) {
+        val resolvedState = state.ifEmpty { "Uttar Pradesh" }
+        val resolvedDistrict = district.ifEmpty { "Lucknow" }
+
+        if (!forceRefresh && _discoverData.value != null && currentLanguage == language && currentState == resolvedState && currentDistrict == resolvedDistrict) {
+            return
+        }
         currentLanguage = language
+        currentState = resolvedState
+        currentDistrict = resolvedDistrict
+
         _loading.value = true
         viewModelScope.launch {
             val body = JsonObject().apply {
                 addProperty("type", "home")
-                addProperty("state", state.ifEmpty { "Uttar Pradesh" })
-                addProperty("district", district.ifEmpty { "Lucknow" })
-                
-                val locationArray = JsonArray().apply {
-                    add(26.8467)
-                    add(80.9462)
-                }
-                add("location", locationArray)
+                addProperty("state", resolvedState)
+                addProperty("district", resolvedDistrict)
                 addProperty("language", language)
                 addProperty("user_preferences", "Solar Pumps, Organic Seeds")
             }
@@ -44,19 +48,19 @@ class DiscoverViewModel(private val repository: DiscoverRepository) : ViewModel(
     }
 
     fun fetchDiscoverList(type: String, state: String, district: String, language: String) {
+        val resolvedState = state.ifEmpty { "Uttar Pradesh" }
+        val resolvedDistrict = district.ifEmpty { "Lucknow" }
+
         currentLanguage = language
+        currentState = resolvedState
+        currentDistrict = resolvedDistrict
+
         _loading.value = true
         viewModelScope.launch {
             val body = JsonObject().apply {
                 addProperty("type", type)
-                addProperty("state", state.ifEmpty { "Uttar Pradesh" })
-                addProperty("district", district.ifEmpty { "Lucknow" })
-                
-                val locationArray = JsonArray().apply {
-                    add(26.8467)
-                    add(80.9462)
-                }
-                add("location", locationArray)
+                addProperty("state", resolvedState)
+                addProperty("district", resolvedDistrict)
                 addProperty("language", language)
                 addProperty("user_preferences", "Solar Pumps, Organic Seeds")
             }

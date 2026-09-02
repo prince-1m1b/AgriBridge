@@ -17,6 +17,7 @@ import com.example.agribridge.viewmodel.ChatViewModel
 import com.example.agribridge.databinding.FragmentProfileBinding
 import com.example.agribridge.ui.authUser.dialogs.LanguageSelectionDialogFragment
 import com.example.agribridge.utils.*
+import com.example.agribridge.utils.Constant.UserDetails
 import com.example.agribridge.viewmodel.LogoutViewModel
 import com.example.agribridge.ui.dashboard.dialogs.SelectLocationDialogFragment
 import com.google.gson.JsonObject
@@ -95,7 +96,9 @@ class ProfileFragment : Fragment() {
     private fun onClicks() {
         binding.clLanguage.setOnClickListener {
             val dialog = LanguageSelectionDialogFragment.newInstance { _ ->
-                activity?.recreate()
+                activity?.let { act ->
+                    act.recreate()
+                }
             }
             dialog.show(parentFragmentManager, LanguageSelectionDialogFragment.TAG)
         }
@@ -106,7 +109,10 @@ class ProfileFragment : Fragment() {
         }
 
         binding.clLocation.setOnClickListener {
-            val dialog = SelectLocationDialogFragment.newInstance {
+            val preference = Preference(requireContext())
+            val currentState = preference.getStringPreferenceForUser(UserDetails.USER_STATE)
+            val currentDistrict = preference.getStringPreferenceForUser(UserDetails.USER_DISTRICT)
+            val dialog = SelectLocationDialogFragment.newInstance(currentState, currentDistrict) {
                 init() // Reload updated preferences values
             }
             dialog.show(parentFragmentManager, SelectLocationDialogFragment.TAG)
