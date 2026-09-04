@@ -14,6 +14,12 @@ import java.util.concurrent.TimeUnit
 @RequiresApi(Build.VERSION_CODES.GINGERBREAD)
 class ApiClient(context: Context) {
 
+// https://www.agribridge.net/api/
+
+    companion object {
+        const val BASE_URL = "https://www.agribridge.net/api/"
+    }
+
     private val loggingInterceptor = if (BuildConfig.DEBUG) {
         HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
@@ -35,7 +41,7 @@ class ApiClient(context: Context) {
     val retrofit: Retrofit by lazy {
         Retrofit
             .Builder()
-            .baseUrl("http://192.168.1.11:8000/api/")
+            .baseUrl(BASE_URL)
             .client(httpClient)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
