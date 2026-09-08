@@ -49,6 +49,12 @@
             android:windowSoftInputMode="adjustResize" />
 
         <activity
+            android:name=".ui.authUser.activities.OtpVerificationActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+
+        <activity
             android:name=".ui.dashboard.activities.DashboardActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />

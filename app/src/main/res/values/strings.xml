@@ -136,4 +136,16 @@
     <string name="loader_title_agribridge">Cultivating Your Dashboard</string>
     <string name="loader_subtitle_agribridge">Personalizing agricultural intelligence with AI...</string>
 
+    <!-- OTP Verification Portal -->
+    <string name="otp_verification_title">Phone Verification</string>
+    <string name="enter_verification_code">Verification Code</string>
+    <string name="code_sent_to">We have sent a 6-digit code to</string>
+    <string name="edit">Edit</string>
+    <string name="enter_six_digit_otp">ENTER 6-DIGIT OTP</string>
+    <string name="didnt_receive_code">Didn\'t receive the code?</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="verify_and_proceed">Verify &amp; Proceed</string>
+    <string name="verify">Verify</string>
+    <string name="verified">Verified</string>
+
 </resources>

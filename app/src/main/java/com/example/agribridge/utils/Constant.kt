@@ -82,7 +82,9 @@ object Constant {
         const val EDIT_TEXT = "edit_text"
         const val SAVE_ACCOUNT = "save_account"
         const val DIRECT_LOGIN = "login_account"
+        const val VERIFICATION_TOKEN = "verification_token"
     }
+
     
     //DATE FORMAT KEY
     object DateFormat {

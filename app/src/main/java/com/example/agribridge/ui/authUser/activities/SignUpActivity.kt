@@ -36,6 +36,10 @@ import com.example.agribridge.utils.request
 import com.example.agribridge.utils.setDrawableEndClickListener
 import com.example.agribridge.utils.setText
 import com.example.agribridge.utils.toast
+import android.app.Activity
+import android.content.Intent
+import androidx.activity.result.contract.ActivityResultContracts
+import com.example.agribridge.ui.authUser.activities.OtpVerificationActivity
 import com.example.agribridge.viewmodel.SignUpViewModel
 import com.google.gson.Gson
 import com.google.gson.JsonObject
@@ -43,6 +47,26 @@ import com.google.gson.JsonObject
 class SignUpActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignUpBinding
+
+    private var verifiedPhoneNumber = ""
+    private var activeVerificationToken = ""
+
+    private val otpLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val token = result.data?.getStringExtra(OtpVerificationActivity.EXTRA_VERIFICATION_TOKEN) ?: ""
+            val phone = result.data?.getStringExtra(OtpVerificationActivity.EXTRA_PHONE_NUMBER) ?: ""
+            if (token.isNotEmpty()) {
+                activeVerificationToken = token
+                verifiedPhoneNumber = phone
+                binding.etPhone.isEnabled = false
+                toast("Phone number verified successfully!")
+                submitRegistrationIfReady()
+            }
+        }
+    }
+
 
     // VIEW MODEL
     private val signUpViewModel: SignUpViewModel by viewModels {
@@ -134,19 +158,19 @@ class SignUpActivity : AppCompatActivity() {
 
             btnContinue.setOnClickListener {
                 if (isValid()) {
-                    val childJson = JsonObject().apply {
-                        addProperty("phone_number", getText(etPhone).replace(" ", ""))
-                        addProperty("password", getText(etPassword))
-                        addProperty("first_name", getText(etFirstName))
-                        addProperty("last_name", getText(etLastName))
-                        addProperty("email", getText(etEmail))
-                        addProperty("state", selectedState)
-                        addProperty("district", selectedDistrict)
+                    val phone = getText(etPhone).replace(" ", "")
+                    if (activeVerificationToken.isEmpty() || verifiedPhoneNumber != phone) {
+                        val intent = Intent(this@SignUpActivity, OtpVerificationActivity::class.java).apply {
+                            putExtra(OtpVerificationActivity.EXTRA_PHONE_NUMBER, phone)
+                        }
+                        otpLauncher.launch(intent)
+                        return@setOnClickListener
                     }
-                    Log.d("TAG", "api>>parsing>>information :: ${Gson().toJson(childJson)} ")
-                    signUpViewModel.apiCallForUserSignUp(childJson)
+
+                    submitRegistrationIfReady()
                 }
             }
+
 
             tvLogin.setOnClickListener {
                 finish() // Since they likely came from Login, just finish
@@ -271,7 +295,25 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
 
+    private fun submitRegistrationIfReady() {
+        binding.apply {
+            val childJson = JsonObject().apply {
+                addProperty("phone_number", getText(etPhone).replace(" ", ""))
+                addProperty("verification_token", activeVerificationToken)
+                addProperty("password", getText(etPassword))
+                addProperty("first_name", getText(etFirstName))
+                addProperty("last_name", getText(etLastName))
+                addProperty("email", getText(etEmail))
+                addProperty("state", selectedState)
+                addProperty("district", selectedDistrict)
+            }
+            Log.d("TAG", "api>>parsing>>information :: ${Gson().toJson(childJson)} ")
+            signUpViewModel.apiCallForUserSignUp(childJson)
+        }
+    }
+
     private fun setObserver() {
+
         signUpViewModel.getUserSignUpResponse.observe(this) { apiResponse ->
             if (apiResponse?.statusCode == 201 || apiResponse?.type?.lowercase() == "success") {
                 val successDialog = SuccessDialogFragment.newInstance {
